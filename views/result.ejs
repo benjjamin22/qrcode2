@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="./IEMB/cardgrid.css">
+    
+    <title>singleuser</title>
+</head>
+<style type="text/css">
+	html, body {
+		font-family: sans-serif;
+	}
+	.controls {
+		margin: 1em 0;
+	}
+	#text {
+		width: 90%;
+	}
+	#output_text {
+		cursor: copy;
+		font-family: monospace;
+		-webkit-font-smoothing: none;
+		font-smooth: never;
+		text-rendering: optimizeSpeed;
+		line-height: 1.1;
+		white-space: nowrap;
+	}
+	/* Fix for monospace fonts where the space is not the same width as the block characters */
+	#output_text span {
+		display: inline-block;
+		width: 1ch;
+	}
+	#output_img, #output_svg {
+		cursor: copy;
+	}
+	#output_img img, #output_svg svg {
+		max-width: 50vw;
+	}
+	</style>
+
+<body >
+    <div style="display: flex; margin-top: 0%;">
+        <div style="list-style-type: none;color:black; margin-top: .1rem; ">
+            <div class="user-profile" id="html-content-holder" >
+                <div class="profile-top">
+                    <img src="<%=Picturepath%>">
+                    <div class="profile-info">
+                        <h2 style="color:white;text-align:center;margin-bottom:0px;line-height:2rem;"><%=Name%>  <%=Mname%>  <%=Surname%></h2>  
+                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;">>>>NIN:-<%=NIN%><<<</h1>
+                    </div>
+                
+                </div>
+                <h1 style="font-size:12px;margin-top:10px;text-align:center;padding:0 0rem;">SCHOOL</h1>
+                <div class="profile-bottom" style="margin-bottom:-25px";>
+                    <div style="flex-direction:column;margin:-11px 0px;" class="profile-info">      
+                        <h1 style="Font-size:18px;text-align: center;">- <%=School%>  -</h1>                               
+                        </div>
+                         <h1 style="font-size:12px;margin-top:20px;text-align:center;padding:0 0rem;">DATE OF BIRTH/CLASS</h1>
+                         <div style="flex-direction:column;"class="profile-info"> 
+                                <h1 style="margin-top:-1.5px;font-size:17px;">- <%=Day%> <%=Month%> <%=Year%>-</h1>
+                                <h1 style="margin:-5px;color:red;font-size:15px;">- <%=Presentclass%> -</h1>
+                            </div> 
+                    </div>
+                    <div class="profile-bottom">
+                        <div style="display:flex;">
+                            <div style="width:31%;margin:0 1px;">
+                                <h1 style="font-size:12px;margin-top:-5px;text-align:center;padding:0 1.5rem;">B/G</h1>
+                                <div class="profile-info">
+                                <h1 style="color:black;padding:0 .8rem;margin-top:-5px;"><%=Bloodgroup%></h1>
+                                </div>
+                            </div>
+                            <div style="width:31%;margin:0 1px;">
+                            <h1 style="font-size:12px;margin-top:-5px;text-align:center;padding:0 1rem;">STATUS</h1>
+                                <div style="flex-direction:column;"class="profile-info">
+                                <h1 style="color:black;padding:0 .8rem;margin-top:-5px;"><%=Status%></h1>
+                                </div>
+                            </div>
+                            <div style="width:31%;margin:0 1px;">
+                                <h1 style="font-size:12px;margin-top:-5px;text-align:center;padding:0 1rem;">GENDER</h1>
+                                <div class="profile-info">
+                                <h1 style="color:black;padding:0 .8rem;margin-top:-5px;"><%=Gender%></h1>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h1 style="font-size:12px;margin-top:-8px;text-align:center;padding:0 0rem;">LGA/STATE OF ORIGIN</h1>
+                            <div style="flex-direction:column;"class="profile-info"> 
+                                <h1 style="margin-top:-1px;">- <%=State%> -</h1>
+                                <h1 style="margin:-5px;color:red;font-size:12px;">- <%=HometownCommunity%> -</h1>
+                            </div> 
+                            
+                            
+                                <div style="display:flex;margin:-9px 0px;;justify-content:center;">
+                                    <div>
+                                        <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT NO 2:</h1>
+                                        <div class="profile-info">
+                                            <a style="text-decoration: none;" href="Tel:${user.Phoneno1}">
+                                                <div style="margin-left: 0px;"class="p1">
+                                                    <p2 style="margin-left: 0px;"><%=ParentPhoneNo%></p2>
+                                                </div>
+                                            </a>                   
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT NO 2:</h1>
+                                        <div class="profile-info">
+                                            <a style="text-decoration: none;" href="Tel:${user.Phoneno2}">
+                                                <div style="margin-left: 0px;"class="p2">
+                                                    <p2 style="margin-left: 0px;" id="facttextgg"><%=ParentPhoneNo2%></p2>
+                                                </div>
+                                            </a>                   
+                                        </div>                           
+                                    </div>
+                                </div>
+                                <div class="profile-bottom" style="margin-bottom:-25px;";>
+                                    <div style="flex-direction:column;margin:-11px 0px;" class="profile-info">  
+                                         <div id="facttext" ></div>
+										 <div id="qrcode" ></div>
+										 <div id="output_text"></div>  
+                                   </div>
+								   
+                            
+                    </div>
+                       
+                    </div>  
+					   
+                </div>
+				<div class="profile-bottom" style="margin-bottom:-25px;";>
+					<div class="profile-info"  >
+							<div style="margin-left: 0px;align-items: center;"class="p2" class="btn-download" id="btn_convert" >
+								<h1>Download</h1>
+								<div id="previewImg" style="display: none"></div>
+							</div>              
+					</div>                           
+				</div> 
+            </div>
+		
+        </div>
+        
+    </div>
+   <script type="module">
+    import QrCode from '/qrcode.mjs' ;
+
+	let facttext = document.querySelector('#facttext');
+    let numberinput = JSON.parse('<%- JSON.stringify(id)%>');
+
+  
+	getfecth() 
+
+    function getfecth() {
+        
+                    const li = document.createElement('li')
+
+                                         li.innerHTML = ``
+										function renderHtml(matrix) {
+	// '▀', '▄', '█' // '\u{0020}' space, '\u{2580}' upper half block, '\u{2584}' lower half block, '\u{2588}' block
+	// Figure space: '\u{2007}'
+	const renderOptions = {
+		segments: ['<span>&nbsp;</span>', '<span>▀</span>', '<span>▄</span>', '<span>█</span>'],
+		sep: '<br>',
+	};
+	return QrCode.render('medium', matrix, renderOptions);
+}
+
+function change() {
+	const input = 'https://a.mydatabase.com.ng/ASEMB/01/'+ numberinput;
+	let text;
+	let svg;
+	try {
+		const ecl = 'L+';
+		const qrOptions = {
+			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
+			optimizeEcc: ecl.includes('+'),
+		};
+		const matrix = QrCode.generate(input, qrOptions);
+		text = renderHtml(matrix);
+		const renderOptions = {
+		};
+		svg = QrCode.render('svg', matrix, renderOptions);
+	} catch (e) {
+		text = 'Error: ' + e;
+	}
+	const textElement = document.querySelector('#output_text');
+	const imgElement = document.querySelector('#output_img img');
+	const svgElement = document.querySelector('#output_svg svg');
+	textElement.innerHTML = text;
+	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+	imgElement.alt = input;
+	svgElement.alt = input;
+	if (svg) {
+		svgElement.outerHTML = svg;
+	} else {
+		svgElement.innerHTML = svg;
+	}
+}
+                                                facttext.appendChild(li)
+												change();
+
+    };
+   
+
+
+
+
+
+function copyMultiLinePlainTextToClipboard(text) {
+	const temp = document.createElement('textarea');
+	temp.value = text;
+	document.body.appendChild(temp);
+	temp.select();
+	document.execCommand('copy');
+	document.body.removeChild(temp);
+}
+
+function safeFilename(text) {
+	return text.replaceAll(/[^a-zA-Z0-9_-]/g, '_').toLowerCase();
+}
+
+async function dataUriToBlob(dataUri) {
+	try {
+		return await (await fetch(dataUri)).blob();
+	} catch (e) {
+		const protocolParts = dataUri.split(':');
+		if (protocolParts[0] != 'data') throw new Error('Invalid data URI');
+		const nonProtocol = protocolParts.slice(1).join(':');
+		const dataParts = nonProtocol.split(',');
+		const metaParts = dataParts[0].split(';');
+		const type = metaParts[0];
+		const encoding = metaParts[1];
+		const rawData = dataParts.slice(1).join('');
+		const data = encoding == 'base64' ? atob(rawData) : decodeURIComponent(rawData);
+		const bytes = [];
+		for (let i = 0; i < binary.length; i++) bytes.push(data.charCodeAt(i));
+		return new Blob([new Uint8Array(bytes)], { type });
+	}
+}
+
+async function rasterizeImageToBlob(src, type = 'image/png') {
+	const img = new Image();
+	  const ctx = document.createElement('CANVAS').getContext('2d');
+	img.crossOrigin = '';
+	img.src = src;
+	return new Promise(resolve => {
+		img.onload = () => {
+			ctx.canvas.width = img.naturalWidth;
+			ctx.canvas.height = img.naturalHeight;
+			ctx.drawImage(img, 0, 0);
+			ctx.canvas.toBlob((blob) => resolve(blob), type);
+		};
+	});
+}
+
+function svgToBlob(svg, type = 'image/svg+xml') {
+	return new Blob([svg], { type });
+}
+
+
+function click_text() {
+	const text = document.querySelector('#output_text').innerText;
+	copyMultiLinePlainTextToClipboard(text);
+	document.querySelector('#text').focus();
+}
+
+function start() {
+    //document.querySelector('#text').addEventListener('input', change);
+    
+    document.querySelector('#output_text').addEventListener('click', click_text);
+    
+    //document.querySelector('#text').focus();
+    
+}
+
+
+window.addEventListener('DOMContentLoaded', start);
+
+
+   </script>
+   <script>
+   document.getElementById("btn_convert").addEventListener("click", function () {
+	html2canvas(document.getElementById("html-content-holder"), {
+		allowTaint: true,
+		useCORS: true,
+	}).then(function (canvas) {
+		var link = document.createElement("a");
+		document.body.appendChild(link);
+		document.getElementById("previewImg").appendChild(canvas);
+		link.download = "fileName.png";
+		link.href = canvas.toDataURL();
+		link.target = "_blank";
+		link.click();
+	});
+ });
+   </script>
+</body>
+</html>
