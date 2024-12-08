@@ -6,8 +6,9 @@ import posts from './routes/posts.js';
 import logger from './middleware/logger.js';
 import errorHandler from './middleware/error.js';
 import notFound from './middleware/notFound.js';
-
-import accounts from './data.json' assert {type:"json"};
+import fs from 'fs' ;
+//import accounts from './data.json' assert {type:"json"};
+//import accounts from './data.json' ;
 
 const port = process.env.PORT || 8000;
 
@@ -15,7 +16,7 @@ const port = process.env.PORT || 8000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
+const accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'))
 
 const app = express();
 
