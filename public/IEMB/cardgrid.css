@@ -168,7 +168,7 @@ button {
     align-items: center;
     max-width: 95%;
     justify-content: center;
-    ox-shadow: rgb(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 03)0px 8px 16px -8px;
+    box-shadow: rgb(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 03)0px 8px 16px -8px;
     transition: 0.5s ease;
     border: 1px rgb(214, 211, 211) solid;
 }
