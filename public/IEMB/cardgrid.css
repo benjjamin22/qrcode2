@@ -16,6 +16,7 @@ body {
 }
 
 .user-profile {
+    margin-top: 30rem;
     background-color: #dcdcdc;
     width: 25.5rem;
     max-width: 30rem;
@@ -24,7 +25,8 @@ body {
     margin: 0px auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     flex-wrap: wrap;
-    height: 73rem;
+    height: 89rem;
+    margin-top: 10rem;
 }
 
 .profile-top {

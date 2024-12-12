@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="styo.css">
 	<link rel="stylesheet" href="./IEMB/cardgrid.css">
     
     <title>singleuser</title>
@@ -46,16 +47,22 @@
 	</style>
 
 <body >
+	
     <div style="display: flex; margin-top: 0%;">
-        <div style="list-style-type: none;color:black; margin-top: .1rem; ">
+        <div style="list-style-type: none;color:black; margin-top: 5rem; ">
             <div class="user-profile" id="html-content-holder" >
-                <div class="profile-top">
-                    <img src="<%=Picturepath%>">
+                <div class="profile-top" style="margin-top: 7rem;" >
+					<img src="mrugah1..jpg" style="margin-top: 1rem;margin-bottom: -7rem; height: 5rem;width: 24rem;margin-left: -1.2rem;">
+                    <img src="<%=Picturepath%>" style="margin-top: 7rem;">
+					<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+						<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+					</svg>
                     <div class="profile-info">
-                        <h2 style="color:white;text-align:center;margin-bottom:0px;line-height:2rem;"><%=Name%>  <%=Mname%>  <%=Surname%></h2>  
-                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;">>>>NIN:-<%=NIN%><<<</h1>
+                        <h1 style="color:white;text-align:center;margin-bottom:7px;margin-top: 7px; line-height:2rem;font-size: 3rem;"><%=Name%> </h1> 
+						<h2 style="color:white;text-align:center;margin-bottom:0px;line-height:2rem;font-size: 1.4rem;"><%=Mname%>  <%=Surname%></h2> 
+                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;color: yellow;">>>>NIN:-<%=NIN%><<<</h1>
                     </div>
-                
                 </div>
                 <h1 style="font-size:12px;margin-top:10px;text-align:center;padding:0 0rem;">PRESENT SCHOOL</h1>
                 <div class="profile-bottom" style="margin-bottom:-25px";>
@@ -97,9 +104,9 @@
                             </div> 
                             
                             
-                                <div style="display:flex;margin:-9px 0px;;justify-content:center;">
+                                <div style="display:flex;margin:-9px 0px;;justify-content:center;margin-right: 1rem;">
                                     <div>
-                                        <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT NO 2:</h1>
+                                        <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT NO 1:</h1>
                                         <div class="profile-info">
                                             <a style="text-decoration: none;" href="Tel:${user.Phoneno1}">
                                                 <div style="margin-left: 0px;"class="p1">
@@ -120,7 +127,7 @@
                                     </div>
                                 </div>
                                 <div class="profile-bottom" style="margin-bottom:-25px;";>
-                                    <div style="flex-direction:column;margin:-11px 0px;" class="profile-info">  
+                                    <div style="flex-direction:column;margin:-11px 0px;margin-right: 2.7rem;" class="profile-info">  
                                          <div id="facttext" ></div>
 										 <div id="qrcode" ></div>
 										 <div id="output_text"></div>  
@@ -133,8 +140,8 @@
 					   
                 </div>
 				<div class="profile-bottom" style="margin-bottom:-25px;";>
-					<div class="profile-info"  >
-							<div style="margin-left: 0px;align-items: center;"class="p2" class="btn-download" id="btn_convert" >
+					<div class="profile-info" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;" >
+							<div style="margin-left: 0px;align-items: center;" >
 								<h1>Download</h1>
 								<div id="previewImg" style="display: none"></div>
 							</div>              
