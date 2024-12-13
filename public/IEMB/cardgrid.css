@@ -25,7 +25,7 @@ body {
     margin: 0px auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     flex-wrap: wrap;
-    psdding-bottom:.5rem;
+    padding-bottom:1rem;
 }
 
 .profile-top {
