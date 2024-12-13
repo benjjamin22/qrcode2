@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content:center;
     font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 3rem;
+    margin-top: 0rem;
     background-color: #dcdcdc;
 }
 
@@ -37,7 +37,7 @@ body {
     border-radius: 0px;
     margin: auto 0rem;
     flex-wrap: wrap;
-    height:15rem;
+    height:25rem;
 }
 
 .profile-top img {
