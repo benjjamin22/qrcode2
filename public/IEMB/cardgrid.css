@@ -37,6 +37,7 @@ body {
     border-radius: 0px;
     margin: auto 0rem;
     flex-wrap: wrap;
+    height:15rem;
 }
 
 .profile-top img {
