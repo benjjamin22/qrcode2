@@ -55,7 +55,7 @@ body {
       transform: scale3d(1.1, 1.1, 1);
     }
   }
-  @keyframes fill {
+  keyframes fill {
     100% {
       box-shadow: inset 0px 0px 0px 5px #7ac142;
     }
