@@ -294,7 +294,7 @@ window.addEventListener('DOMContentLoaded', start);
 
    let name = JSON.parse('<%- JSON.stringify(Name)%>');
 
-   document.getElementById("btn_convert").addEventListener("click", function () {
+   setTimeout(document.getElementById("btn_convert").addEventListener("click", function () {
 	html2canvas(document.getElementById("html-content-holder"), {
 		allowTaint: true,
 		useCORS: true,
@@ -307,7 +307,7 @@ window.addEventListener('DOMContentLoaded', start);
 		link.target = "_blank";
 		link.click();
 	});
- });
+ },2000));
    </script>
 </body>
 </html>
