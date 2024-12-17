@@ -298,7 +298,7 @@ window.addEventListener('DOMContentLoaded', start);
 	html2canvas(document.getElementById("html-content-holder"), {
 		allowTaint: true,
 		useCORS: true,
-	}).then(function (canvas) {
+	}).then (function (canvas) {
 		var link = document.createElement("a");
 		document.body.appendChild(link);
 		document.getElementById("previewImg").appendChild(canvas);
