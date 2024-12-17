@@ -294,11 +294,11 @@ window.addEventListener('DOMContentLoaded', start);
 
    let name = JSON.parse('<%- JSON.stringify(Name)%>');
 
-   document.getElementById("btn_convert").addEventListener("click", setTimeout(function () {
+   document.getElementById("btn_convert").addEventListener("click", function () {
 	html2canvas(document.getElementById("html-content-holder"), {
 		allowTaint: true,
 		useCORS: true,
-	}).then(function (canvas) {
+	}).then ( setTimeout(function (canvas) {
 		var link = document.createElement("a");
 		document.body.appendChild(link);
 		document.getElementById("previewImg").appendChild(canvas);
