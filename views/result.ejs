@@ -298,7 +298,7 @@ window.addEventListener('DOMContentLoaded', start);
 	html2canvas(document.getElementById("html-content-holder"), {
 		allowTaint: true,
 		useCORS: true,
-	}).then ( setTimeout(function (canvas) {
+	}).then (function (canvas) {
 		var link = document.createElement("a");
 		document.body.appendChild(link);
 		document.getElementById("previewImg").appendChild(canvas);
@@ -307,7 +307,7 @@ window.addEventListener('DOMContentLoaded', start);
 		link.target = "_blank";
 		link.click();
 	});
- },2000));
+ });
    </script>
 </body>
 </html>
