@@ -36,8 +36,7 @@ body {
     font-size: var(--normal-font-size);
     background-color: rgb(27, 27, 97);
     color: var(--white-color);
-    justify-content: center;
-    align-items: center;
+    margin-top: -2.8rem;
 }
 
 a {
@@ -129,16 +128,6 @@ main>div p {
 
 .input.input-error {
     border: 1px solid red;
-}
-
-.login .container {
-    max-width: 420px;
-    margin: 3rem auto;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 1.25rem;
-    background-color: rgb(30, 30, 109);
-    height: auto;
 }
 
 .input.input-error:focus {
