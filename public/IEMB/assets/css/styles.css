@@ -418,7 +418,7 @@ main>div p {
 .scroll {
     position:relative;
     display: flex;
-    width: 750px;
+    max-width: 400px;
     overflow: hidden;
   
 }
@@ -427,6 +427,11 @@ main>div p {
     white-space: nowrap;
     animation: scroll var(--time) linear infinite;
     animation-delay: calc(var(--time)*-1);
+    margin: -5px;
+}
+
+.scroll div span{
+   font-size: 12px;
 
 }
 
@@ -459,10 +464,13 @@ main>div p {
     display: inline-flex;
     margin: 10px;
     letter-spacing: 0.2em;
-    background: #333;
+    background:transparent;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
+    border-color: #fff;
+    border-style: solid ;
+    border-width: .2px ;
     transition: 0.5s;
 }
 
