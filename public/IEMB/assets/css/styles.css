@@ -27,8 +27,7 @@
 
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    
 }
 
 body {
@@ -105,14 +104,14 @@ main>div p {
 .container .loginForm {
     justify-content: center;
     position: relative;
-    width: 70%;
+    width: auto;
     margin: auto;
     column-gap: 0rem;
     text-align: center;
     justify-content: center;
-    margin-bottom: 0%;
+    margin-top: 0rem;
     min-height: 8rem;
-    max-width: 40vh;
+    max-width: 30vh;
 }
 
 .input {
@@ -174,10 +173,18 @@ main>div p {
 .container {
     justify-content: center;
     align-items: center;
-    height: 1vh;
+    height: 30rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 180%;
     text-align: center;
     margin-top: 20px;
+    background-image: url('/isembbb..jpg');
+    padding-top: 17rem;
+    
 }
+
+
 
 .card__container {
     padding-block: 5rem;
@@ -358,16 +365,23 @@ main>div p {
 
 /* For small devices */
 
-@media screen and (max-width: 320px) {
+@media (max-width: 320px) {
     .card__data {
         padding: 1rem;
+    }
+    .container {
+        background-image: 180%;
+    }
+    .container .loginForm {
+        margin-top: 4rem;
+        
     }
 }
 
 
 /* For medium devices */
 
-@media screen and (min-width: 768px) {
+@media (max-width:  768px) {
     .card__content {
         margin-inline: 3rem;
     }
@@ -375,12 +389,19 @@ main>div p {
     .swiper-button-prev {
         display: block;
     }
+    .container {
+        background-image: 180%;
+    }
+    .container .loginForm {
+        margin-top: 4rem;
+        
+    }
 }
 
 
 /* For large devices */
 
-@media screen and (min-width: 1120px) {
+@media (max-width: 1120px) {
     .card__container {
         max-width: 1120px;
     }
@@ -389,6 +410,13 @@ main>div p {
     }
     .swiper-button-next {
         right: -1rem;
+    }
+    .container {
+        background-image: 180%;
+    }
+    .container .loginForm {
+        margin-top: 4rem;
+        
     }
 }
 
