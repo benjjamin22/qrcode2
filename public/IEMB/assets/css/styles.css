@@ -36,8 +36,10 @@ body {
     font-size: var(--normal-font-size);
     background-color: rgb(27, 27, 97);
     color: var(--white-color);
-    margin-top: -2.8rem;
+    justify-content: center;
+    align-items: center;
 }
+
 
 a {
     text-decoration: none;
@@ -412,3 +414,69 @@ main>div p {
         transform: rotateY(360deg);
     }
 }
+
+.scroll {
+    position:relative;
+    display: flex;
+    max-width: 400px;
+    overflow: hidden;
+  
+}
+
+.scroll div {
+    white-space: nowrap;
+    animation: scroll var(--time) linear infinite;
+    animation-delay: calc(var(--time)*-1);
+    margin: -5px;
+}
+
+.scroll div span{
+   font-size: 12px;
+
+}
+
+.scroll div:nth-child(2) {
+    animation: scroll2 var(--time) linear infinite;
+    animation-delay: calc(var(--time)/-2);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.scroll div span {
+    display: inline-flex;
+    margin: 10px;
+    letter-spacing: 0.2em;
+    background:transparent;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-color:gray;
+    border-style: solid ;
+    border-width: .2px ;
+    transition: 0.5s;
+    opacity: 50%;
+}
+
+.scroll div span:hover {
+    background: #3fd2f9;
+    cursor: pointer;
+}
+
