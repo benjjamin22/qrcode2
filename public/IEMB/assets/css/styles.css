@@ -371,14 +371,15 @@ main>div p {
     .container {
         background-image: url("/isembbb..jpg");
         background-size: 180%;
-        background-position: center;
+        background-position: center center;
         height: auto;
     }
     .container .loginForm {
-        margin-top: 12rem;
+        margin-top: 55%;
         
     }
 }
+
 
 .flip {
     margin: -1;
