@@ -27,7 +27,8 @@
 
 * {
     box-sizing: border-box;
-    
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -35,10 +36,8 @@ body {
     font-size: var(--normal-font-size);
     background-color: rgb(27, 27, 97);
     color: var(--white-color);
-    justify-content: center;
-    align-items: center;
+    margin-top: -2.8rem;
 }
-
 
 a {
     text-decoration: none;
@@ -104,14 +103,14 @@ main>div p {
 .container .loginForm {
     justify-content: center;
     position: relative;
-    width: auto;
+    width: 70%;
     margin: auto;
     column-gap: 0rem;
     text-align: center;
     justify-content: center;
-    margin-top: 21rem;
+    margin-bottom: 0%;
     min-height: 8rem;
-    max-width: 30vh;
+    max-width: 40vh;
 }
 
 .input {
@@ -173,18 +172,10 @@ main>div p {
 .container {
     justify-content: center;
     align-items: center;
-    height: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: auto;
-    background-attachment: fixed;
+    height: 1vh;
     text-align: center;
-    background-image: url('/isembbb..jpg');
-    padding-top: 17rem;
-    
+    margin-top: 60px;
 }
-
-
 
 .card__container {
     padding-block: 5rem;
@@ -363,23 +354,41 @@ main>div p {
 /*=============== BREAKPOINTS ===============*/
 
 
+/* For small devices */
 
-/* For medium devices */
-
-@media screen and (max-width: 360px) {
-    
-    .container {
-        background-image: url("/isembbb..jpg");
-        background-size: 180%;
-        background-position: center center;
-        height: auto;
-    }
-    .container .loginForm {
-        margin-top: 55%;
-        
+@media screen and (max-width: 320px) {
+    .card__data {
+        padding: 1rem;
     }
 }
 
+
+/* For medium devices */
+
+@media screen and (min-width: 768px) {
+    .card__content {
+        margin-inline: 3rem;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: block;
+    }
+}
+
+
+/* For large devices */
+
+@media screen and (min-width: 1120px) {
+    .card__container {
+        max-width: 1120px;
+    }
+    .swiper-button-prev {
+        left: -1rem;
+    }
+    .swiper-button-next {
+        right: -1rem;
+    }
+}
 
 .flip {
     margin: -1;
@@ -403,69 +412,3 @@ main>div p {
         transform: rotateY(360deg);
     }
 }
-
-.scroll {
-    position:relative;
-    display: flex;
-    max-width: 400px;
-    overflow: hidden;
-  
-}
-
-.scroll div {
-    white-space: nowrap;
-    animation: scroll var(--time) linear infinite;
-    animation-delay: calc(var(--time)*-1);
-    margin: -5px;
-}
-
-.scroll div span{
-   font-size: 12px;
-
-}
-
-.scroll div:nth-child(2) {
-    animation: scroll2 var(--time) linear infinite;
-    animation-delay: calc(var(--time)/-2);
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes scroll2 {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-200%);
-    }
-}
-
-.scroll div span {
-    display: inline-flex;
-    margin: 10px;
-    letter-spacing: 0.2em;
-    background:transparent;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border-color:gray;
-    border-style: solid ;
-    border-width: .2px ;
-    transition: 0.5s;
-    opacity: 80%;
-}
-
-.scroll div span:hover {
-    background: #3fd2f9;
-    cursor: pointer;
-}
-
