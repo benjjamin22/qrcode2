@@ -372,7 +372,7 @@ main>div p {
         background-image: url("/isembbb..jpg");
         background-size: 180%;
         background-position: center;
-        height: 80rem;
+        height: auto;
     }
     .container .loginForm {
         margin-top: 18rem;
@@ -380,16 +380,18 @@ main>div p {
     }
 }
 
-@media only screen and (max-width:  368px) {
+@media screen and (max-width:  368px) {
     
     .container {
         background-image: url("/isembbb..jpg");
         background-size: 180%;
         background-position: center;
-        height: 80rem;
+        height: auto;
     }
     .container .loginForm {
         margin-top: 12rem;
+        position: relative;
+   
         
     }
 }
