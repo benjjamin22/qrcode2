@@ -366,21 +366,7 @@ main>div p {
 
 /* For medium devices */
 
-@media only screen and (max-width:  768px) {
-    
-    .container {
-        background-image: url("/isembbb..jpg");
-        background-size: 180%;
-        background-position: center;
-        height: auto;
-    }
-    .container .loginForm {
-        margin-top: 18rem;
-        
-    }
-}
-
-@media screen and (max-width:  368px) {
+@media screen and (max-width: 360px) {
     
     .container {
         background-image: url("/isembbb..jpg");
@@ -390,14 +376,9 @@ main>div p {
     }
     .container .loginForm {
         margin-top: 12rem;
-        position: relative;
-   
         
     }
 }
-
-
-
 
 .flip {
     margin: -1;
