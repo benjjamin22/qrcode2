@@ -109,7 +109,7 @@ main>div p {
     column-gap: 0rem;
     text-align: center;
     justify-content: center;
-    margin-top: 0rem;
+    margin-top: 21rem;
     min-height: 8rem;
     max-width: 30vh;
 }
@@ -173,12 +173,12 @@ main>div p {
 .container {
     justify-content: center;
     align-items: center;
-    height: 30rem;
+    height: auto;
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 180%;
+    background-position: center center;
+    background-size: auto;
+    background-attachment: fixed;
     text-align: center;
-    margin-top: 20px;
     background-image: url('/isembbb..jpg');
     padding-top: 17rem;
     
@@ -363,62 +363,39 @@ main>div p {
 /*=============== BREAKPOINTS ===============*/
 
 
-/* For small devices */
-
-@media (max-width: 320px) {
-    .card__data {
-        padding: 1rem;
-    }
-    .container {
-        background-image: 180%;
-    }
-    .container .loginForm {
-        margin-top: 4rem;
-        
-    }
-}
-
 
 /* For medium devices */
 
-@media (max-width:  768px) {
-    .card__content {
-        margin-inline: 3rem;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: block;
-    }
+@media only screen and (max-width:  768px) {
+    
     .container {
-        background-image: 180%;
+        background-image: url("/isembbb..jpg");
+        background-size: 180%;
+        background-position: center;
+        height: 80rem;
     }
     .container .loginForm {
-        margin-top: 4rem;
+        margin-top: 18rem;
+        
+    }
+}
+
+@media only screen and (max-width:  368px) {
+    
+    .container {
+        background-image: url("/isembbb..jpg");
+        background-size: 180%;
+        background-position: center;
+        height: 80rem;
+    }
+    .container .loginForm {
+        margin-top: 12rem;
         
     }
 }
 
 
-/* For large devices */
 
-@media (max-width: 1120px) {
-    .card__container {
-        max-width: 1120px;
-    }
-    .swiper-button-prev {
-        left: -1rem;
-    }
-    .swiper-button-next {
-        right: -1rem;
-    }
-    .container {
-        background-image: 180%;
-    }
-    .container .loginForm {
-        margin-top: 4rem;
-        
-    }
-}
 
 .flip {
     margin: -1;
