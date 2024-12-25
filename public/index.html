@@ -14,13 +14,27 @@
      </div>
  </div>
      <div class="menu">
-       <div class="lass-container" >
-         <div class="ogin-box" >
-         
-        <form action="/login" method="post" >
-            <input type="number" id="ParentPhoneNo" name="ParentPhoneNo" placeholder="ParentPhoneNo">
-            <div class="display"></div>
-        </form>
+       <div class="class-container" >
+         <div class="login-box" >
+            <div class="wrapper">
+                <div class="input-group">
+                    <input type="text" id="School"  placeholder="Search...." onkeyup="myFunction()" >
+                 <div class="display">
+                    <l id="myUL" >
+                      <li><a href="ISEMB/Del.html">Holy Ghost College Owerri</a></li>
+                      <li><a href="#">Army Day Secondary School, Obinze</a></li>
+                      <li><a href="#">Community Secondary School, Orogwe</a></li>
+                      <li><a href="#">Akwakuma Girl's Secondary School, Akwakuma</a></li>
+                      <li><a href="#">Ndegwu Secondary School, Umunoha</a></li>
+                      <li><a href="#">Owerri Girl's Secondary School, Owerri</a></li>
+                      <li><a href="#">Cindy</a></li>
+                      <li><a href="#">Calvin</a></li>
+                      <li><a href="#">Christina</a></li>
+                      <li><a href="#">Cindy</a></li>
+                    </ul>
+                 </div>         
+                </div>
+            </div>
          </div>
        </div>
      </div>
@@ -56,5 +70,23 @@
             </form>
         </div>
     </div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("School");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
 </body>
 </html>
