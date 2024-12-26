@@ -38,7 +38,6 @@ app.set('view engine', 'ejs');
 app.use(logger);
 
 
-
 // Routes
 app.use('/api/posts', posts);
 

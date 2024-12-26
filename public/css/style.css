@@ -16,6 +16,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("/op.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header {
@@ -66,7 +69,7 @@ main {
 
 .movie {
     width: 85px;
-    background-color: var(--secondary-color);
+    background-color: transparent;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
