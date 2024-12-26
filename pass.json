@@ -1,0 +1,65 @@
+[
+    {
+        "Aname": {
+            "Name": "ONYEBUCHI",
+            "Mname": "EMMANUEL",
+            "Surname": "OKORO"
+        },
+        "Ddateofbirth": {
+            "Day": "21ST",
+            "Month": "APRIL,",
+            "Year": "2009"
+        },
+        "_id": "6730b58e42f902d4fb6e363d",
+        "Status": "STUDENT",
+        "School": "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI ",
+        "YearofAdmin": "2021",
+        "Presentclass": "SS3",
+        "Gender": "MALE",
+        "Bloodgroup": "O+",
+        "ParentPhoneNo": "0808047172",
+        "ParentPhoneNo2": "-",
+        "NIN": "-",
+        "HometownCommunity": "OH OZARA",
+        "client": "https://benjjamin22.github.io/filter/ISEC/ADSSO/1.jpg",
+        "State": "EBONYI",
+        "pin": "0NK9YGR8TU",
+        "pine": "5405574908",
+        "time": "2024-11-10 13:30:54",
+        "id": "33fe9e58-ea20-4859-a687-502f0c9490a4",
+        "sn": 1,
+        "__v": 0
+    },
+    {
+        "Aname": {
+            "Name": "OLUEBUBE",
+            "Mname": "MIRACLE",
+            "Surname": "LUCKY"
+        },
+        "Ddateofbirth": {
+            "Day": "7TH",
+            "Month": "JUNE,",
+            "Year": "2007"
+        },
+        "_id": "6730b60742f902d4fb6e3640",
+        "Status": "STUDENT",
+        "School": "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI ",
+        "YearofAdmin": "2024",
+        "Presentclass": "SSS2",
+        "Gender": "MALE",
+        "Bloodgroup": "-",
+        "ParentPhoneNo": "98136218828",
+        "ParentPhoneNo2": "-",
+        "NIN": "-",
+        "HometownCommunity": "MGBIRICHI MARK ANGEL",
+        "iclient": "https://benjjamin22.github.io/filter/ISEC/ADSSO/2.jpg",
+        "client": "1.jpg",
+        "State": "IMO",
+        "pin": "JC9OT7ZJBY",
+        "pine": "12345",
+        "time": "2024-11-10 13:32:55",
+        "id": "d882e5e7-a3e4-414e-8247-08b046212ef3",
+        "sn": 2,
+        "__v": 0
+    }
+]
