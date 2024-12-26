@@ -87,6 +87,11 @@ app.get('/nams', (req, res) => {
     res.json(data)
 })
 
+app.get('/obinze', (req, res) => {
+    const foundUser = accounts.filter((data) => 'ARMY DAY SECONDARY SCHOOL OBINZE OWERRI ' === data.School);
+    res.json(foundUser)
+})
+
 
 // Route to display users
 //app.post('/Armyday', (req, res) => {
