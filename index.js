@@ -82,6 +82,97 @@ app.post('/Armyday', async (req, res) => {
     }
 });
 
+app.post('/AGSSA', async (req, res) => {
+    try{
+        const foundUser = keys.find((data) => req.body.Password === data.pine);
+        if (foundUser) {
+                //res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,Status:foundUser.Status,id:foundUser.id});
+                res.sendFile(path.join(__dirname, 'public','/AGSSA/index.html'));
+            } else {
+                res.render('ddx');
+            //res.send("<div align ='center'><h2>Invalid ID NO /h2></div><br><br><div align ='center'><a href='wwww.isemb.mydatabase.com.ng'>login again</a></div>");
+            }
+        //}
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
+app.post('/Orogwe', async (req, res) => {
+    try{
+        const foundUser = keys.find((data) => req.body.Password === data.pine);
+        if (foundUser) {
+                //res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,Status:foundUser.Status,id:foundUser.id});
+                res.sendFile(path.join(__dirname, 'public','/CSSO/index.html'));
+            } else {
+                res.render('ddx');
+            //res.send("<div align ='center'><h2>Invalid ID NO /h2></div><br><br><div align ='center'><a href='wwww.isemb.mydatabase.com.ng'>login again</a></div>");
+            }
+        //}
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
+app.post('/Ndegwu', async (req, res) => {
+    try{
+        const foundUser = keys.find((data) => req.body.Password === data.pine);
+        if (foundUser) {
+                //res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,Status:foundUser.Status,id:foundUser.id});
+                res.sendFile(path.join(__dirname, 'public','/NSSU/index.html'));
+            } else {
+                res.render('ddx');
+            //res.send("<div align ='center'><h2>Invalid ID NO /h2></div><br><br><div align ='center'><a href='wwww.isemb.mydatabase.com.ng'>login again</a></div>");
+            }
+        //}
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
+app.post('/Owerri', async (req, res) => {
+    try{
+        const foundUser = keys.find((data) => req.body.Password === data.pine);
+        if (foundUser) {
+                //res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,Status:foundUser.Status,id:foundUser.id});
+                res.sendFile(path.join(__dirname, 'public','/OCSS/index.html'));
+            } else {
+                res.render('ddx');
+            //res.send("<div align ='center'><h2>Invalid ID NO /h2></div><br><br><div align ='center'><a href='wwww.isemb.mydatabase.com.ng'>login again</a></div>");
+            }
+        //}
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
+app.post('/Uratta', async (req, res) => {
+    try{
+        const foundUser = keys.find((data) => req.body.Password === data.pine);
+        if (foundUser) {
+                //res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,Status:foundUser.Status,id:foundUser.id});
+                res.sendFile(path.join(__dirname, 'public','/USSU/index.html'));
+            } else {
+                res.render('ddx');
+            //res.send("<div align ='center'><h2>Invalid ID NO /h2></div><br><br><div align ='center'><a href='wwww.isemb.mydatabase.com.ng'>login again</a></div>");
+            }
+        //}
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
+
 app.get('/nams', (req, res) => {
     const data = accounts;
     res.json(data)
@@ -89,6 +180,27 @@ app.get('/nams', (req, res) => {
 
 app.get('/obinze', (req, res) => {
     const foundUser = accounts.filter((data) => 'ARMY DAY SECONDARY SCHOOL OBINZE OWERRI ' === data.School);
+    res.json(foundUser)
+});
+app.get('/Akwakuma', (req, res) => {
+    const foundUser = accounts.filter((data) => " GIRLS SECONDARY SCHOOL AKWAKUMA " === data.School);
+    res.json(foundUser)
+})
+app.get('/Orogwe', (req, res) => {
+    const foundUser = accounts.filter((data) => " COMMUNITY SECONDARY SCHOOL OROGWE " === data.School);
+    res.json(foundUser)
+})
+app.get('/Ndegwu', (req, res) => {
+    const foundUser = accounts.filter((data) => "NDEGWU SECONDARY SCHOOL,UMUNWOHA" === data.School);
+    res.json(foundUser)
+})
+app.get('/Owerri', (req, res) => {
+    const foundUser = accounts.filter((data) => " OWERRI CITY SECONDARY SCHOOL " === data.School);
+    res.json(foundUser)
+})
+
+app.get('/Uratta', (req, res) => {
+    const foundUser = accounts.filter((data) => " URATTA SECONDARY SCHOOL, URATTA " === data.School);
     res.json(foundUser)
 })
 
