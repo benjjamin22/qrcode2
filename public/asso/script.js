@@ -55,7 +55,7 @@ async function filterProducts() {
 
     // Loop over products and check for matches
     productsEls.forEach((productEl, index) => {
-        const product = nuasa[index];
+        const product = data[index];
 
         // Check to see if product matches the search or checked items
         const matchesSearchTerm = productEl.innerText.toLowerCase().includes(searchTerm);
@@ -109,14 +109,14 @@ async function getmovie() {
                     <img src="${user.client}">
                     <div class="profile-info">
                         <h2 style="color:white;text-align:center;margin-bottom:0px;line-height:2rem;">${user.Aname.Name} ${user.Aname.Mname} ${user.Aname.Surname}</h2>  
-                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;">>>>${user.NIN}
+                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;">>>>ID NO: ${user.pine}<<<</h1>
                     </div>
                 
                 </div>
                 <div class="profile-bottom">
                     <div style="flex-direction:column;margin:-11px 0px;" class="profile-info"> 
-                        <h1>- IMO STATE UNIVERSITY -</h1>
-                            <h1 style="margin-top:-3px;color:red;font-size:12px;">-  MICROBIOLOGY STUDENTS ASSOCIATION -</h1>
+                        <h1>- ${user.Ddateofbirth.Day} ${user.Ddateofbirth.Month} ${user.Ddateofbirth.Year} -</h1>
+                           
                         </div>
                     </div>
                     <div class="profile-bottom">
@@ -148,31 +148,29 @@ async function getmovie() {
                                 <h1 style="margin:-5px;color:red;font-size:12px;">- ${user.HometownCommunity} -</h1>
                             </div> 
                             
-                           <ul style="margin-bottom:7rem;">
-                                <li>
-                                    <img class="dropDown" src="./facebook.jpg"style="width:60px;height:60px; border-radius:50px;"></span>
-                                    <ul style="width:20rem;background-color: aqua;height: 2rem;justify-content: center; text-align: center;">
-                                        <li style="justify-content: center;width:26.6rem;background-color: rgb(28, 88, 158);margin-left: -5rem;color:white">facebook:${user.Facebook}</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                <img class="dropDown" src="./instagrame.jpg"style="width:60px;height:60px; border-radius:50px;"></span>
-                                    <ul style="width:5rem;background-color: red;height: 2rem;justify-content: center; text-align: center;">
-                                        <li style="justify-content: center;width:27rem;background-color: red;margin-left:-10rem;color:white">instagrame:${user.Instagram}</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                <img class="dropDown" src="./tiktok.jpg"style="width:60px;height:60px; border-radius:50px;"></span>
-                                    <ul style="width:5rem;background-color: orangered;height: 2rem;justify-content: center; text-align: center;">
-                                        <li style="justify-content: center;width:27rem;background-color:#313131;margin-left: -14.8rem;color:white">tiktok:${user.Tiktok}</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                <img class="dropDown" src="./twitter.jpg"style="width:60px;height:60px; border-radius:50px;"></span>
-                                    <ul style="width:5rem;background-color: tomato;height: 2rem;justify-content: center; text-align: center;">
-                                        <li style="justify-content: center;width:27rem;background-color: rgb(28, 88, 158);margin-left: -19.7rem;color:white">twitter:${user.Twitter}</li>
-                                    </ul>
-                                </li>
+                           <ul style="margin-bottom:1rem;">
+                                 <div style="display:flex;margin:-9px 0px;;justify-content:center;">
+                            <div>
+                                <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT CONTACT 1:</h1>
+                                <div class="profile-info">
+                                    <a style="text-decoration: none;" href="Tel:${user.ParentPhoneNo}">
+                                        <div style="margin-left: 0px;"class="p1">
+                                            <p2 style="margin-left: 0px;">${user.ParentPhoneNo}</p2>
+                                        </div>
+                                    </a>                   
+                                </div>
+                            </div>
+                            <div>
+                                <h1 style="font-size:12px;margin:0px;text-align:center;">PARENT CONTACT 2:</h1>
+                                <div class="profile-info">
+                                    <a style="text-decoration: none;" href="Tel:${user.ParentPhoneNo2}">
+                                        <div style="margin-left: 0px;"class="p2">
+                                            <p2 style="margin-left: 0px;">${user.ParentPhoneNo2}</p2>
+                                        </div>
+                                    </a>                   
+                                </div>                           
+                            </div>
+                        </div>
                             </ul>
                     </div>
                        
