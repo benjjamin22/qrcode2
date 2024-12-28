@@ -15,7 +15,7 @@
                 <a Style="font-size: 12px; 
                 width:60px; height: 30px; background-color: red; 
                 color: white; text-decoration: none; 
-                border-radius: 3px; "  href="ISEMB/CSSO.html" class="logout">back</a>
+                border-radius: 3px; "  href="/logout" class="logout">back</a>
                 <input type="text" id="search" class="search" placeholder="Search"><small id="objects"></small>
                 <div id="filters-container" Style="display: flex; width: 100%;justify-content: center;display: flex;align-items: center;margin-top: 10px;  ">
                     <div Style="background-color: transparent;justify-content: center;border-radius: 80px;display: flex;width: 60px;margin: 0px 3px;outline-color: azure 4px;">
@@ -45,6 +45,20 @@
         </main>
     </div>
     <script src="/CSSO/script.js"></script>
+    <script>
+        window.addEventListener("pageshow", function(event) {
+            var historyTraversal = event.persisted,
+                perf = window.performance,
+                perfEntries = perf && perf.getEntriesByType && perf.getEntriesByType("navigation"),
+                perfEntryType = perfEntries && perfEntries[0] && perfEntries[0].type,
+                navigationType = perf && perf.navigation && perf.navigation.type;
+            if (
+                historyTraversal || perfEntryType === "back_forward" || navigationType === 2
+            ) {
+                window.location.reload();
+            }
+        })
+    </script>
 </body>
 
 </html>

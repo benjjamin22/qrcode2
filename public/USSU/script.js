@@ -3,7 +3,7 @@ const productsWrapperEl = document.getElementById('main');
 const form = document.getElementById('form')
 const checkEls = document.querySelectorAll('.check');
 const filtersContainer = document.getElementById('filters-container');
-url = '/Uratta'
+url = '/Uratta1'
 
 // Initialize cart item count
 
