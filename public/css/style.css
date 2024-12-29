@@ -39,7 +39,8 @@ header {
     color: #fff;
     padding: 0.5rem .3rem;
     opacity: 0.5;
-    width: 200px;
+    width: 210px;
+    margin: 0px 10px;
 }
 
 .search::placeholder {

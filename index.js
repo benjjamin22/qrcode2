@@ -47,6 +47,10 @@ app.set('view engine', 'ejs');
 app.use(logger);
 app.use(cors())
 app.use(cookieParser());
+app.use((req,res,next)=>{
+    res.set('Cache-Contron', 'no-store');
+    next();
+});
 
 
 // Routes
