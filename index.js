@@ -26,7 +26,8 @@ const app = express();
 app.use(session({
     secret: uuidv4(),
     resave: 'false',
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { maxAge: 2 * 60 * 1000}
 }));
 
 
@@ -224,7 +225,7 @@ app.get('/Uratta1', (req, res) => {
 
 })
 
-app.get('/logout' , (req, res) => {
+app.get ('/logout' , (req, res) => {
     req.session.destroy(err => {
         if(err) {
             console.log(err);
@@ -235,7 +236,7 @@ app.get('/logout' , (req, res) => {
             res.sendFile(path.join(__dirname, 'public','/index.html'));
         }
     })
-})
+    })
 
 
 app.use(notFound);
