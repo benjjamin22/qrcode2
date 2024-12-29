@@ -3,7 +3,7 @@ const productsWrapperEl = document.getElementById('main');
 const form = document.getElementById('form')
 const checkEls = document.querySelectorAll('.check');
 const filtersContainer = document.getElementById('filters-container');
-url = '/obinze1'
+url = '/Orogwe1'
 
 // Initialize cart item count
 
@@ -88,7 +88,7 @@ async function getmovieee() {
 
 function movieselected(id) {
     sessionStorage.setItem('movieId', id);
-    window.location = '/asso/samplepreview.html';
+    window.location = '/CSSO/samplepreview.html';
     return false;
 
 }

@@ -68,26 +68,26 @@ app.post('/login', async (req, res) => {
     }
 });
 
-
-const key= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
-app.post('/ASSO', (req, res) => {
-    const  credential = key.find((data) => req.body.Password === data.pine );
+const key1= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
+app.post('/ARMY', (req, res) => {
+    const  credential = key1.find((data) => req.body.Password === data.pine );
     if(credential) {
         req.session.user = credential.pine;
-        res.redirect('/Armydayy');
+        res.redirect('/ARMYY');
     }
     else {
         res.render('ddx');
     }
 })
-app.get('/Armydayy', (req, res) => {
+app.get('/ARMYY', (req, res) => {
     if(req.session.user) {
-        res.sendFile(path.join(__dirname, 'public','/ASSO/index.html'));
+        res.sendFile(path.join(__dirname, 'public','/ARMY/index.html'));
     }
     else {
         res.render('ddx');
     }
 })
+
 
 const key2= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
 app.post('/AGSSA', (req, res) => {
