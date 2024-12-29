@@ -51,6 +51,7 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/posts', posts);
+app.use('/api/posts/ff', posts);
 
 
 app.post('/login', async (req, res) => {
