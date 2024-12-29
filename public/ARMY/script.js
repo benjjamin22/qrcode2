@@ -88,7 +88,7 @@ async function getmovieee() {
 
 function movieselected(id) {
     sessionStorage.setItem('movieId', id);
-    window.location = '/CSSO/samplepreview.html';
+    window.location = '/ARMY/samplepreview.html';
     return false;
 
 }
