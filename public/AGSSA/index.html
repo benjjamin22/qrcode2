@@ -31,18 +31,10 @@
     </div>
     <script src="/AGSSA/script.js"></script>
     <script>
-        window.addEventListener("pageshow", function(event) {
-            var historyTraversal = event.persisted,
-                perf = window.performance,
-                perfEntries = perf && perf.getEntriesByType && perf.getEntriesByType("navigation"),
-                perfEntryType = perfEntries && perfEntries[0] && perfEntries[0].type,
-                navigationType = perf && perf.navigation && perf.navigation.type;
-            if (
-                historyTraversal || perfEntryType === "back_forward" || navigationType === 2
-            ) {
-                window.location.reload();
-            }
-        })
+        setTimeout(() =>{
+            window.location.href = '/ISEMB/ASSO.html';
+
+        },20* 60 * 1000)
     </script>
 </body>
 
