@@ -70,7 +70,7 @@ app.post('/login', async (req, res) => {
 
 
 const key= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
-app.post('/Armyday', (req, res) => {
+app.post('/ASSO', (req, res) => {
     const  credential = key.find((data) => req.body.Password === data.pine );
     if(credential) {
         req.session.user = credential.pine;
