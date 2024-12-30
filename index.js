@@ -59,7 +59,7 @@ app.use('/api/posts/ff', posts);
 
 app.post('/login', async (req, res) => {
     try{
-        const foundUser = accounts.find((data) => req.body.Password === data.pine || req.body.ParentPhoneNo === data.ParentPhoneNo);
+        const foundUser = accounts.find((data) => req.body.Password === data.pine && req.body.ParentPhoneNo === data.ParentPhoneNo);
         if (foundUser) {
                 res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,Status:foundUser.Status,id:foundUser.id});
             } else {
