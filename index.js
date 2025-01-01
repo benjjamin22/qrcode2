@@ -98,6 +98,26 @@ app.get('/ARMYY', (req, res) => {
     }
 })
 
+const key0= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
+app.post('/isemb', (req, res) => {
+    const  credential = key0.find((data) => req.body.Password === data.pine );
+    if(credential) {
+        req.session.user = credential.pine;
+        res.redirect('/isembb');
+    }
+    else {
+        res.render('ddx');
+    }
+})
+app.get('/isembb', (req, res) => {
+    if(req.session.user) {
+        res.sendFile(path.join(__dirname, 'public','/ISEMBO/index.html'));
+    }
+    else {
+        res.render('ddx');
+    }
+})
+
 
 const key2= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
 app.post('/AGSSA', (req, res) => {
@@ -229,6 +249,12 @@ app.get('/Owerri1', (req, res) => {
 
 app.get('/Uratta1', (req, res) => { 
     const foundUser = accounts.filter((data) => " URATTA SECONDARY SCHOOL, URATTA " === data.School);
+    res.json(foundUser)
+
+})
+
+app.get('/isemb1', (req, res) => { 
+    const foundUser = accounts
     res.json(foundUser)
 
 })

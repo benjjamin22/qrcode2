@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>sample</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a Style="font-size: 12px; 
+                width:60px; height: 30px; background-color: red; 
+                color: white; text-decoration: none; 
+                border-radius: 3px; text-align: center;padding: 5px 0px;margin-top: 10px;"  href="/logout" class="logout">logout</a>
+            <form id="form">
+                <input type="text" id="search" class="search" placeholder="Search"><small id="objects"></small>
+                <div id="filters-container" Style="display: flex; width: 100%;justify-content: center;display: flex;align-items: center;margin-top: 10px;  ">
+                   
+                </div>
+            </form>
+        </header>
+
+
+        <main id="main" class="mainli">
+
+
+        </main>
+    </div>
+    <script src="/ISEMBO/script.js"></script>
+    <script>
+          window.addEventListenersetTimeout(("pageshow", function(event) {
+            var historyTraversal = event.persisted,
+                perf = window.performance,
+                perfEntries = perf && perf.getEntriesByType && perf.getEntriesByType("navigation"),
+                perfEntryType = perfEntries && perfEntries[0] && perfEntries[0].type,
+                navigationType = perf && perf.navigation && perf.navigation.type;
+            if (
+                historyTraversal || perfEntryType === "back_forward" || navigationType === 2
+            ) {
+                window.location.reload();
+            }
+        }),19* 60 * 1000)
+
+        setTimeout(() =>{
+            window.location.href = '/ISEMB/ASSO.html';
+
+        },20* 60 * 1000)
+
+    </script>
+</body>
+
+</html>
