@@ -78,6 +78,23 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('/search', async (req, res) => {
+    try{
+        const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name || req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
+        if (foundUser) {
+            req.session.user = foundUser.pine;
+                //res.render('result',{id:foundUser.pine});
+                res.send(`<!DOCTYPE html><html><body><h1 style="font-size:4rem; margin-top:8rem;text-align: center;">${foundUser.pine}</h1></html>`)
+            } else {
+                res.render('ddx');
+            }
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
 const key1= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
 app.post('/ARMY', (req, res) => {
     const  credential = key1.find((data) => req.body.Password === data.pine );

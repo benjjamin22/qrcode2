@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="IMO SECONDARY EDUCATION MANAGEMENT BOARD (ISEMB), SEMB IMO STATE, ISEMB" content="IMO SECONDARY EDUCATION MANAGEMENT BOARD (ISEMB),ISEMB">
+    <title>IMO STATE SECONDARY EDUCATION MANAGEMENT BOARD (ISEMB) SEMB IMO STATE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+         <div class="hamburger"><div>
+     </div>
+ </div>
+    
+   </div>
+   
+    <div style="height: auto;padding-bottom: 30px;" class="glass-container" >
+        <div class="login-box">
+            <div style="margin-top: -3rem;">
+                <img class="flip" style="height: 80px;
+                width: 80px;
+                border-radius: 50px;
+                margin-top: -30px;
+                justify-content: center;
+                position: relative;
+                margin: auto;
+                column-gap: 0rem;
+                text-align: center;
+                justify-content: center;
+                margin-bottom: -5%;
+                " src="btn.jpg" alt="">         
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h2 style="font-size: 18px;">Imo State Government</h2>
+                <h2>Ministry of Education</h2>
+                <p style="font-size: 13px;">Secondary Education Management Board</p>
+            </div>
+            <form action="/search" method="post" >
+                <h2 style="margin: 0px;font-size: 20px;margin-bottom: 0px;"></h2>
+                <input style="margin-bottom: -12px;" type="text" id="firstName" name="firstName" placeholder="firstName">
+                <input style="margin-bottom: -12px;" type="text" id="Password" name="MiddleName"required placeholder="MiddleName">
+                <input style="margin-bottom: -12px;" type="text" id="Password" name="SurName "required placeholder="SurName ">
+                <input  type="number" id="Password" name="ParentPhoneNo"required placeholder="ParentPhoneNo">
+             <button type="submit">Get my id Number</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("School");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+</body>
+</html>

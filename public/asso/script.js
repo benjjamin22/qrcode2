@@ -3,7 +3,7 @@ const productsWrapperEl = document.getElementById('main');
 const form = document.getElementById('form')
 const checkEls = document.querySelectorAll('.check');
 const filtersContainer = document.getElementById('filters-container');
-url = '/isemb1'
+url = '/obinze1'
 
 // Initialize cart item count
 
@@ -88,7 +88,7 @@ async function getmovieee() {
 
 function movieselected(id) {
     sessionStorage.setItem('movieId', id);
-    window.location = '/ISEMBO/samplepreview.html';
+    window.location = '/asso/samplepreview.html';
     return false;
 
 }
@@ -114,16 +114,11 @@ async function getmovie() {
                 
                 </div>
                 <div class="profile-bottom">
-                <h1 style="font-size:12px;margin-bottom:0px;text-align:center;padding:0 1rem;margin-top:-10px;">SCHOOL</h1>
-                    <div style="flex-direction:column;margin-bottom:15px;text-align:center;" class="profile-info"> 
-                        <h1>- ${user.School} -</h1>
-                    </div>
-                
-                <h1 style="font-size:12px;margin-bottom:15px;text-align:center;padding:0 1rem;">DATE OF BIRTH</h1>
                     <div style="flex-direction:column;margin:-11px 0px;" class="profile-info"> 
                         <h1>- ${user.Ddateofbirth.Day} ${user.Ddateofbirth.Month} ${user.Ddateofbirth.Year} -</h1>
-                     </div>
-                </div>
+                           
+                        </div>
+                    </div>
                     <div class="profile-bottom">
                         <div style="display:flex;">
                             <div style="width:25%;margin:0 1px;">
@@ -186,6 +181,4 @@ async function getmovie() {
 
     });
 }
-
-
   
