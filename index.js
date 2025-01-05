@@ -59,7 +59,7 @@ app.use('/api/posts/ff', posts);
 
 app.post('/login', async (req, res) => {
     try{
-        const foundUser = accounts.find((data) => req.body.Password === data.pine && req.body.ParentPhoneNo === data.ParentPhoneNo);
+        const foundUser = accounts.find((data) => req.body.Password === data.pine || req.body.ParentPhoneNo === data.ParentPhoneNo);
         if (foundUser) {
             req.session.user = foundUser.pine;
                 res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,
@@ -96,7 +96,7 @@ app.post('/search', async (req,res) => {
             if (foundUser) {
             //req.session.user = foundUser.pine;
                 //res.render('result',{id:foundUser.pine});
-                res.render('myid',{id:foundUser.pine});
+                res.render('myid',{id:foundUser.pine,firstname:foundUser.Aname.Name,MiddleName:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,ParentPhoneNo:foundUser.ParentPhoneNo});
                 //res.send(`<!DOCTYPE html><html><body><h1 style="font-size:6rem; margin-top:8rem;text-align: center;">${foundUser.pine}</h1>
                    // </html>`)
             } else {
