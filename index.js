@@ -84,7 +84,7 @@ app.post('/search', async (req, res) => {
         if (foundUser) {
             req.session.user = foundUser.pine;
                 //res.render('result',{id:foundUser.pine});
-                res.send(`<!DOCTYPE html><html><body><h1 style="font-size:4rem; margin-top:8rem;text-align: center;">${foundUser.pine}</h1></html>`)
+                res.send(`<!DOCTYPE html><html><body><h1 style="font-size:4rem; margin-top:8rem;text-align: center;">here is your id${foundUser.pine}</h1></html>`)
             } else {
                 res.render('ddx');
             }
