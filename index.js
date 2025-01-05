@@ -59,7 +59,7 @@ app.use('/api/posts/ff', posts);
 
 app.post('/login', async (req, res) => {
     try{
-        const foundUser = accounts.find((data) => req.body.Password === data.pine || req.body.ParentPhoneNo === data.ParentPhoneNo);
+        const foundUser = accounts.find((data) => req.body.Password === data.pine && req.body.ParentPhoneNo === data.ParentPhoneNo);
         if (foundUser) {
             req.session.user = foundUser.pine;
                 res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,
@@ -78,7 +78,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-app.post('/search', async (req,res,next) => {
+app.use((req,res,next)=>{
     if(req.body && typeof req.body === 'object'){
         for(const key in req.body){
             if(typeof req.body[key] ==='string'){
@@ -86,16 +86,19 @@ app.post('/search', async (req,res,next) => {
             }
         }
     }
-    next()},
-    (req,res) => {
+    next()
+})
+
+
+app.post('/search', async (req,res) => {
         try{
-        const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name || req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
-        if (foundUser) {
+            const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name && req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
+            if (foundUser) {
             //req.session.user = foundUser.pine;
                 //res.render('result',{id:foundUser.pine});
                 res.render('myid',{id:foundUser.pine});
                 //res.send(`<!DOCTYPE html><html><body><h1 style="font-size:6rem; margin-top:8rem;text-align: center;">${foundUser.pine}</h1>
-                    //</html>`)
+                   // </html>`)
             } else {
                 res.render('ddx');
             }
@@ -105,6 +108,13 @@ app.post('/search', async (req,res,next) => {
         
     }
 });
+
+
+
+
+
+
+
 
 const key1= keys.filter((data) => "ARMY DAY SECONDARY SCHOOL OBINZE OWERRI " === data.School);
 app.post('/ARMY', (req, res) => {
