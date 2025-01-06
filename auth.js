@@ -300,3 +300,12 @@ app.use((req,res,next)=>{
 
 
 
+<form action="/search" method="post" >
+<h2 style="margin: 0px;font-size: 20px;margin-bottom: 0px;"></h2>
+<input style="margin-bottom: -12px;" type="text" id="firstName" name="firstName" placeholder="<%=firstname%>">
+<input style="margin-bottom: -12px;" type="text" id="MiddleName" name="MiddleName"required placeholder="<%=MiddleName%>">
+<input style="margin-bottom: -12px;" type="text" id="SurName " name="SurName"required placeholder="<%=Surname%>">
+<input  type="number" id="Password" name="ParentPhoneNo"required placeholder="<%=ParentPhoneNo%>">
+<button type="submit">Get my id Number</button>
+</form>
+
