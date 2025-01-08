@@ -11,6 +11,7 @@ import cors from 'cors' ;
 import cookieParser from 'cookie-parser';
 import session from "express-session";
 import { v4 as uuidv4 } from "uuid";
+import cron from 'node-cron';
 
 const port = process.env.PORT || 8000;
 
@@ -22,6 +23,26 @@ const accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
 const keys = JSON.parse(fs.readFileSync('./pass.json','utf-8'));
 
 const app = express();
+
+const serverUrl = 'https://isemb.mydatabase.com.ng';
+
+const keepAlive = () => {
+    axios.get(serverUrl)
+        .then(response => {
+            console.log(`server response with status:${response.status}`)
+        })
+        .catch(error => {
+            console.log(`error keeping server alive:${error.message}`)
+        })
+}
+
+//Schedule the task to run every 5 minutes
+cron.schedule('*/14 * * * *', () => {
+    console.log('Sending keep-alive request to server...');
+    keepAlive();
+});
+
+console.log('Keep-alive script started.');
 
 app.use(session({
     secret: uuidv4(),
