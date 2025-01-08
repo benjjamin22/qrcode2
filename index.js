@@ -12,6 +12,7 @@ import cookieParser from 'cookie-parser';
 import session from "express-session";
 import { v4 as uuidv4 } from "uuid";
 import cron from 'node-cron';
+import axios from 'axios';
 
 const port = process.env.PORT || 8000;
 
@@ -22,9 +23,8 @@ const __dirname = path.dirname(__filename);
 const accounts = JSON.parse(fs.readFileSync('./data.json','utf-8'));
 const keys = JSON.parse(fs.readFileSync('./pass.json','utf-8'));
 
-const app = express();
 
-const serverUrl = 'https://isemb.mydatabase.com.ng';
+const serverUrl = 'http://isemb.mydatabase.com.ng';
 
 const keepAlive = () => {
     axios.get(serverUrl)
@@ -41,6 +41,9 @@ cron.schedule('*/14 * * * *', () => {
     console.log('Sending keep-alive request to server...');
     keepAlive();
 });
+
+const app = express();
+
 
 console.log('Keep-alive script started.');
 
