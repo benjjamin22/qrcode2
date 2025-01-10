@@ -33,6 +33,7 @@
 		text-rendering: optimizeSpeed;
 		line-height: 1.1;
 		white-space: nowrap;
+		
 	}
 	/* Fix for monospace fonts where the space is not the same width as the block characters */
 	#output_text span {
@@ -41,9 +42,11 @@
 	}
 	#output_img, #output_svg {
 		cursor: copy;
+		
 	}
 	#output_img img, #output_svg svg {
 		max-width: 50vw;
+	
 	}
 	</style>
 
@@ -52,11 +55,11 @@
     <div style="display: flex; margin-top: 0rem;">
         <div style="list-style-type: none;color:black; margin-top: 0rem; ">
             <div class="user-profile nimated ounceInLeft" id="html-content-holder" >
-                <div class="profile-top" style="margin-top: 0rem;" >
-					<div style="margin-bottom: 1rem;">
+                <div class="profile-top" style="margin-top: 0rem;justify-content: center;" >
+					<div style="margin-bottom: 1rem;justify-content: center;align-items: center;text-align: center;">
 						<div style="margin-top: .5rem;">
-							<img class="flip" style="height: 80px;
-							width: 80px;
+							<img class="flip" style="height: 100px;
+							width: 100px;
 							border-radius: 50px;
 							margin-top: -30px;
 							justify-content: center;
@@ -72,9 +75,10 @@
 						<h2 style="font-size: 31px;font-weight: bolder;" >Ministry of Education</h2>
 						<p style="font-size: 16px;font-weight: bolder;">Secondary Education Management Board</p>
 					</div>
-                    <div style="border: 1px solid #fff;padding: 35px 10px;background-color: transparent;height: 22rem;justify-content: center center; 
-					width: 19rem;position: relative; background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    border-radius: 10px;justify-self:center;"><img src="<%=Picturepath%>" style="margin-top: 0rem;"></div>
+                    <div class="profile-info" style="border: 1px solid #fff;padding: 35px 10px;background-color: transparent;height: 22rem;;
+					width: 19rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;margin-left: 20px;"><img style="margin-top: 0rem;justify-self: center;position: relative;" src="<%=Picturepath%>" >
+					</div>
 					<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
 						<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
 						<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
@@ -148,14 +152,17 @@
                                     </div>
                                 </div>
                                 <div class="profile-bottom" style="margin-bottom:15px;";>
-                                    <div style="flex-direction:column;margin:-11px 0px;margin-right: 2.7rem;" class="profile-info">  
+                                    <div style="flex-direction:column;margin:-11px 0px;margin-right: 2.8rem;" class="profile-info">  
                                          <div id="facttext" ></div>
-										 <div id="qrcode" ></div>
-										 <div id="output_text"></div>  
+										 <div style="width: 300px; height: 300px;" id="output_img">
+									  <img src="" alt="">
+									</div>
                                    </div>
+
+
 								   <h1 style="margin-top:25px;color:black;font-size:15px;text-align: center;margin-bottom: -20px;margin-left: -50px;">Time created: <%=time%> </h1>
 								   
-                            
+								     
                     </div>
                        
                     </div>  
@@ -174,6 +181,19 @@
         </div>
         
     </div>
+	<details style="display: none;">
+		<summary>Text</summary>
+		<div id="output_text">
+		-
+		</div>
+		</details>
+		
+		<details style="display: none;">
+		<summary>Image &lt;img&gt;</summary>
+		<div  id="output_img">
+		  
+		</div>
+		</details>
    <script type="module">
     import QrCode from '/qrcode.mjs' ;
 
