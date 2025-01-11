@@ -140,23 +140,23 @@ const Token = 'f03be1c4dc97b2aea3b0cf68409ca607';
 const client = twilio(accountsid,Token);
 
 app.post('/sendsms', (req,res) => {
-    const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name && req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
-            if (foundUser){
+    //const foundUser = accounts.find((data) => req.body.firstName === data.Aname.Name && req.body.MiddleName === data.Aname.Mname && req.body.SurName === data.Aname.Surname && req.body.ParentPhoneNo === data.ParentPhoneNo);
+            //if (foundUser){
  //const contacts = accounts
  //foundUser.forEach(contact =>{
-    const peronalmessages = `here is your credentials ParentPhoneNo :${foundUser.ParentPhoneNo} and id number:${foundUser.pine} visit https://isemb.mydatabase.com.ng to download your id slip`;
+    //const peronalmessages = `here is your credentials ParentPhoneNo :${foundUser.ParentPhoneNo} and id number:${foundUser.pine} visit https://isemb.mydatabase.com.ng to download your id slip`;
     client.messages
         .create({
-            body: peronalmessages ,
+            body:'peronalmessages',
             from: +16086236616,
             //to:foundUser..ParentPhoneNo
             to:2348037722780
     })
     res.status(200).send('SMS sent to all contact')
  //})
-} else {
-    res.render('ddx');
-}
+//} else {
+    //res.render('ddx');
+//}
 });
 
 
