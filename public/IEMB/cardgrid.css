@@ -29,7 +29,7 @@ body {
 }
 
 .profile-top {
-    ackground-color: rgb(27, 27, 97);
+    background-color: rgb(8, 109, 42);
     background-image: url("/op.JPG");
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,6 +39,8 @@ body {
     border-radius: 0px;
     margin: auto 0rem;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
 }
 

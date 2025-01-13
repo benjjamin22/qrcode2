@@ -97,7 +97,7 @@
                          <h1 style="font-size:15px;margin-top:20px;text-align:center;padding:0 0rem;">DATE OF BIRTH/CLASS</h1>
                          <div style="flex-direction:column;"class="profile-info"> 
                                 <h1 style="margin-top:-1.5px;font-size:19px;font-weight: bolder;">- <%=Day%> <%=Month%> <%=Year%>-</h1>
-                                <h1 style="margin:1px 0px;color:red;font-size:15px;font-weight: bolder;">- <%=Presentclass%> -</h1>
+                              
                             </div> 
                     </div>
                     <div class="profile-bottom">
@@ -112,6 +112,7 @@
                             <h1 style="font-size:12px;margin-top:-5px;text-align:center;padding:0 1rem;">STATUS</h1>
                                 <div style="flex-direction:column;"class="profile-info">
                                 <h1 style="color:black;padding:0 .8rem;margin-top:-5px;font-weight: bolder;"><%=Status%></h1>
+								<h1 style="margin:1px 0px;color:red;font-size:15px;font-weight: bolder;">- <%=Presentclass%> -</h1>
                                 </div>
                             </div>
                             <div style="width:31%;margin:0 1px;">
@@ -157,9 +158,8 @@
 											<div id="qrcode" ></div>
 											<div id="output_text"></div>  
 									  </div>
-								   <h1 style="margin-top:25px;color:black;font-size:15px;text-align: center;margin-bottom: -20px;margin-left: -50px;">Time created: <%=time%> </h1>
-								   
-								     
+									  <h1 style="margin-top:25px;color:black;font-size:15px;text-align: center;margin-bottom: -20px;margin-left: -50px;" >In case of emergency scan the qrcode above to get STUDENT'S PARENT NUMBER. Only authorised person is allowed to scane student qrcode</h1>
+								   <h1 style="margin-top:25px;color:black;font-size:15px;text-align: center;margin-bottom: -20px;margin-left: -50px;">Time created: <%=time%> </h1> 
                     </div>
                        
                     </div>  
@@ -178,19 +178,6 @@
         </div>
         
     </div>
-	<details style="display: none;">
-		<summary>Text</summary>
-		<div id="output_text">
-		-
-		</div>
-		</details>
-		
-		<details style="display: none;">
-		<summary>Image &lt;img&gt;</summary>
-		<div  id="output_img">
-		  
-		</div>
-		</details>
    <script type="module">
     import QrCode from '/qrcode.mjs' ;
 
