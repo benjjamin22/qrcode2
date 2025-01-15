@@ -157,7 +157,7 @@
                                 <div  style="justify-content: center; justify-self: center;margin-top: 10px;"> 
 									<div style="justify-content: center; justify-self: center;">
 										<div " class="profile-info">  
-											<div id="facttext" ></div>
+											<canvas id="facttext" ></canvas>
 											<div id="qrcode" ></div>
 											
 												<div style="width: 200px; height: 200px;" id="output_img">
@@ -308,13 +308,14 @@ async function dataUriToBlob(dataUri) {
 
 async function rasterizeImageToBlob(src, type = 'image/png') {
 	const img = new Image();
-	  const ctx = document.createElement('CANVAS').getContext('2d');
+	 // const ctx = document.createElement('CANVAS').getContext('2d');
+const ctx = document.querySelector('#facttext')
 	img.crossOrigin = '';
 	img.src = src;
 	return new Promise(resolve => {
 		img.onload = () => {
-			ctx.canvas.width = img.naturalWidth;
-			ctx.canvas.height = img.naturalHeight;
+			ctx.canvas.width = img.size;
+			ctx.canvas.height = img.size;
 			ctx.drawImage(img, 0, 0);
 			ctx.canvas.toBlob((blob) => resolve(blob), type);
 		};
