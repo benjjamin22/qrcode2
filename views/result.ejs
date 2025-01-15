@@ -34,7 +34,10 @@
 		line-height: 1.1;
 		white-space: nowrap;
 		
+		
 	}
+
+	
 	/* Fix for monospace fonts where the space is not the same width as the block characters */
 	#output_text span {
 		display: inline-block;
@@ -43,9 +46,13 @@
 	#output_img, #output_svg {
 		cursor: copy;
 		
+		
+		
 	}
 	#output_img img, #output_svg svg {
 		max-width: 50vw;
+		
+		
 	
 	}
 	</style>
@@ -156,17 +163,15 @@
                                 </div>
                                 <div  style="justify-content: center; justify-self: center;margin-top: 10px;"> 
 									<div style="justify-content: center; justify-self: center;">
-										<div " class="profile-info">  
+										<div  class="profile-info">  
 											<div id="facttext" ></div>
 											<div id="qrcode" ></div>
-											
-												<div style="width: 200px; height: 200px;" id="output_img">
-													<img src="" alt="">
+												<div id="output_text">
+													
 												</div>
-											
-											
+											</div>	
 									  </div>
-									</div>
+									
 									<h1 style="margin-top:10px;color:black;font-size:15px;text-align: center;margin-bottom: 10px;" >In case of emergency scan the qrcode above to get STUDENT'S PARENT NUMBER. Only authorised person is allowed to scane student qrcode</h1>
 								   <h1 style="margin-top:10px;color:black;font-size:15px;text-align: center;margin-bottom: 10px;">Time created: <%=time%> </h1> 
                                 </div>
@@ -188,7 +193,7 @@
         
     </div>
 
-	<details style="display: none;">
+	<details style="display: none;" >
 		<summary>Text</summary>
 		<div id="output_text">
 		-
@@ -208,6 +213,10 @@
 		  <svg></svg>
 		</div>
 		</details>
+		
+	
+		
+		
    <script type="module">
     import QrCode from '/qrcode.mjs' ;
 
@@ -286,35 +295,18 @@ function safeFilename(text) {
 	return text.replaceAll(/[^a-zA-Z0-9_-]/g, '_').toLowerCase();
 }
 
-async function dataUriToBlob(dataUri) {
-	try {
-		return await (await fetch(dataUri)).blob();
-	} catch (e) {
-		const protocolParts = dataUri.split(':');
-		if (protocolParts[0] != 'data') throw new Error('Invalid data URI');
-		const nonProtocol = protocolParts.slice(1).join(':');
-		const dataParts = nonProtocol.split(',');
-		const metaParts = dataParts[0].split(';');
-		const type = metaParts[0];
-		const encoding = metaParts[1];
-		const rawData = dataParts.slice(1).join('');
-		const data = encoding == 'base64' ? atob(rawData) : decodeURIComponent(rawData);
-		const bytes = [];
-		for (let i = 0; i < binary.length; i++) bytes.push(data.charCodeAt(i));
-		return new Blob([new Uint8Array(bytes)], { type });
-	}
-}
+
 
 async function rasterizeImageToBlob(src, type = 'image/png') {
-	const img = new Image();
+	const img = new Image(text);
 	  const ctx = document.createElement('CANVAS').getContext('2d');
 	img.crossOrigin = '';
 	img.src = src;
 	return new Promise(resolve => {
 		img.onload = () => {
-			ctx.canvas.width = img.naturalWidth;
-			ctx.canvas.height = img.naturalHeight;
-			ctx.drawImage(img, 0, 0);
+			ctx.canvas.width = '100';
+			ctx.canvas.height = '100';
+			ctx.drawImage(img);
 			ctx.canvas.toBlob((blob) => resolve(blob), type);
 		};
 	});
@@ -328,6 +320,7 @@ function svgToBlob(svg, type = 'image/svg+xml') {
 function click_text() {
 	const text = document.querySelector('#output_text').innerText;
 	copyMultiLinePlainTextToClipboard(text);
+	rasterizeImageToBlob(text)
 	document.querySelector('#text').focus();
 }
 

@@ -33,7 +33,6 @@ class BitBuffer {
     }
 }
 
-
 // --- Segment Modes ---
 
 // Segment Mode 0b0001 - Numeric
