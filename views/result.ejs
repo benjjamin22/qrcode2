@@ -157,12 +157,9 @@
                                 <div  style="justify-content: center; justify-self: center;margin-top: 10px;"> 
 									<div style="justify-content: center; justify-self: center;">
 										<div " class="profile-info">  
-											<canvas id="facttext" ></canvas>
+											<div id="facttext" ></div>
 											<div id="qrcode" ></div>
-											
-												<div style="width: 200px; height: 200px;" id="output_img">
-													<img src="" alt="">
-												</div>
+										        <div id="output_text"></div>
 											
 											
 									  </div>
@@ -243,7 +240,7 @@ function change() {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
 			optimizeEcc: ecl.includes('+'),
 		};
-		const matrix = QrCode.generate(input, qrOptions,{width:size, height:size});
+		const matrix = QrCode.generate(input, qrOptions);
 		text = renderHtml(matrix);
 		const renderOptions = {
 		};
@@ -308,8 +305,7 @@ async function dataUriToBlob(dataUri) {
 
 async function rasterizeImageToBlob(src, type = 'image/png') {
 	const img = new Image();
-	 // const ctx = document.createElement('CANVAS').getContext('2d');
-const ctx = document.querySelector('#facttext')
+	  const ctx = document.createElement('CANVAS').getContext('2d');
 	img.crossOrigin = '';
 	img.src = src;
 	return new Promise(resolve => {
