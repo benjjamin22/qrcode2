@@ -242,7 +242,6 @@
 }
 
 function change() {
-        const size = 200
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -284,7 +283,10 @@ function change() {
 
 
 function copyMultiLinePlainTextToClipboard(text) {
+const size = 200
 	const temp = document.createElement('textarea');
+        temp.height = size;
+        temp.width = size;
 	temp.value = text;
 	document.body.appendChild(temp);
 	temp.select();
