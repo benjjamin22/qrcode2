@@ -242,6 +242,11 @@
 }
 
 function change() {
+const size = '100'
+const sizet = {
+        height : size,
+        width : size,
+}
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -251,7 +256,7 @@ function change() {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
 			optimizeEcc: ecl.includes('+'),
 		};
-		const matrix = QrCode.generate(input, qrOptions);
+		const matrix = QrCode.generate(input, qrOptions, sizet);
 		text = renderHtml(matrix);
 		const renderOptions = {
 		};
@@ -285,8 +290,6 @@ const size = '200',
 function copyMultiLinePlainTextToClipboard(text) {
 
 	const temp = document.createElement('textarea');
-        temp.height = size;
-        temp.width = size;
 	temp.value = text;
 	document.body.appendChild(temp);
 	temp.select();
