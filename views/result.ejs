@@ -33,6 +33,8 @@
 		text-rendering: optimizeSpeed;
 		line-height: 1.1;
 		white-space: nowrap;
+height:100px;
+width:100px;
 		
 	}
 	/* Fix for monospace fonts where the space is not the same width as the block characters */
@@ -241,7 +243,7 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input, qrOptions);
-		text = renderHtml(matrix);
+		text = renderHtml(matrix,{width=100,height=100});
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
