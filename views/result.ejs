@@ -33,8 +33,6 @@
 		text-rendering: optimizeSpeed;
 		line-height: 1.1;
 		white-space: nowrap;
-height:100px;
-width:100px;
 		
 	}
 	/* Fix for monospace fonts where the space is not the same width as the block characters */
@@ -228,7 +226,7 @@ width:100px;
 		segments: ['<span>&nbsp;</span>', '<span>▀</span>', '<span>▄</span>', '<span>█</span>'],
 		sep: '<br>',
 	};
-	return QrCode.render('medium', matrix, renderOptions);
+	return QrCode.render('compact', matrix, renderOptions);
 }
 
 function change() {
@@ -243,7 +241,7 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input, qrOptions);
-		text = renderHtml(matrix,{width='100',height='100'});
+		text = renderHtml(matrix);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
