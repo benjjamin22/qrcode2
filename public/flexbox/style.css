@@ -211,5 +211,8 @@ max-height: 45rem;
   .header img {
     max-width: 300px;
 }
-
+.navbar .container {
+  display: block;
+  justify-content: center;  
+}
 }
