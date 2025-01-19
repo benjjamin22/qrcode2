@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="styo.css">
+	<link rel="stylesheet" href="./IEMB/cardgrid.css">
+    
+    <title>singleuser</title>
+</head>
+<style type="text/css">
+	html, body {
+		font-family: sans-serif;
+	}
+	.controls {
+		margin: 1em 0;
+	}
+	#text {
+		width: 90%;
+	}
+	#output_text {
+		cursor: copy;
+		font-family: monospace;
+		-webkit-font-smoothing: none;
+		font-smooth: never;
+		text-rendering: optimizeSpeed;
+		line-height: 1.1;
+		white-space: nowrap;
+		
+		
+	}
+
+	
+	/* Fix for monospace fonts where the space is not the same width as the block characters */
+	#output_text span {
+		display: inline-block;
+		width: 1ch;
+	}
+	#output_img, #output_svg {
+		cursor: copy;
+		
+		
+		
+	}
+	#output_img img, #output_svg svg {
+		max-width: 50vw;
+		
+		
+	
+	}
+	</style>
+
+<body >
+	
+    <div style="display: flex; margin-top: 0rem;">
+        <div style="list-style-type: none;color:black; margin-top: 0rem; ">
+            <div class="user-profile nimated ounceInLeft" id="html-content-holder" >
+                <div class="profile-top" style="margin-top: 0rem;justify-content: center;" >
+					<div style="margin-bottom: 1rem;justify-content: center;align-items: center;text-align: center;">
+						<div style="margin-top: .5rem;">
+							<img class="flip" style="height: 100px;
+							width: 100px;
+							border-radius: 50px;
+							margin-top: -30px;
+							justify-content: center;
+							position: relative;
+							margin: auto;
+							column-gap: 0rem;
+							text-align: center;
+							justify-content: center;
+							margin-bottom: 0%;
+							" src="btn.jpg" alt="">         
+						</div>
+						<h2 style="font-size: 22px;font-weight: bolder;">imo State Government</h2>
+						<h2 style="font-size: 31px;font-weight: bolder;" >Ministry of Education</h2>
+						<p style="font-size: 16px;font-weight: bolder;">Secondary Education Management Board</p>
+					</div>
+					<div style="justify-content: center; justify-self: center;">
+                    <div class="profile-info" style="border: 1px solid #fff;padding: 35px 10px;background-color: transparent;height: 22rem;;
+					width: 19rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;"><img style="margin-top: 0rem;justify-self: center;" src="<%=Picturepath%>" >
+					</div>
+				</div>
+					<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+						<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+					</svg>
+                    <div class="profile-info">
+                        <h1 style="color:white;text-align:center;margin-bottom:7px;margin-top: 7px; line-height:2rem;font-size: 3rem;font-weight: bolder;"><%=Name%> </h1> 
+						<h2 style="color:white;text-align:center;margin-bottom:0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;"><%=Mname%>  <%=Surname%></h2> 
+                  
+                    </div>
+                </div>
+                
+                <div class="profile-bottom" style="margin-bottom:-25px;margin-top: 0px;margin-right: 1rem;";>
+                   
+                    <div class="profile-bottom">
+               
+                                <div  style="justify-content: center; justify-self: center;margin-top: 0px;text-align: center;"> 
+									<div style="justify-content: center; justify-self: center;margin-top: -1rem;">
+										<div  class="profile-info">  
+											<div id="facttext" ></div>
+											<div id="qrcode" ></div>
+												<div id="output_text"></div>
+											</div>	
+									   </div>
+									<div  style="margin-right: .5rem;">
+									   <h1 style="margin-top:10px;color:black;font-size:15px;text-align: center;margin-bottom: 10px;" >In case of emergency scan the qrcode above to get STUDENT'S PARENT NUMBER. Only authorised person is allowed to scane student qrcode</h1>
+								       <h1 style="margin-top:10px;color:black;font-size:15px;text-align: center;margin-bottom: 10px;">Time created: <%=time%> </h1> 
+								   </div>
+                                </div>
+                    </div>  
+					   
+                </div>
+				<div class="profile-bottom" style="margin-bottom:-25px;";>
+					<div class="profile-info hover" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;">
+							<div class="hover" style="margin-left: 0px;align-items: center;width: 100%;text-align: center;" >
+								<h1>Download</h1>
+								<div id="previewImg" style="display: none"></div>
+							</div>              
+						</div>                          
+				</div> 
+            </div>
+		
+        </div>
+        
+    </div>
+		
+		
+		<script type="module">
+			import QrCode from './qrcode.mjs';
+			
+			function renderHtml(matrix) {
+				// '▀', '▄', '█' // '\u{0020}' space, '\u{2580}' upper half block, '\u{2584}' lower half block, '\u{2588}' block
+				// Figure space: '\u{2007}'
+				const renderOptions = {
+					segments: ['<span>&nbsp;</span>', '<span>▀</span>', '<span>▄</span>', '<span>█</span>'],
+					sep: '<br>',
+				};
+				return QrCode.render('medium', matrix, renderOptions);
+			}
+			
+			
+			
+			function change() {
+				const input = 'www.a.mydatabase.com.ng/isemb/6735d4bff9622b5947899c94"'
+				let text;
+				let svg;
+				try {
+					const ecl = 'L+';
+					const qrOptions = {
+						errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
+						optimizeEcc: ecl.includes('+'),
+					};
+					const matrix = QrCode.generate(input, qrOptions);
+					text = renderHtml(matrix);
+					const renderOptions = {
+					};
+					svg = QrCode.render('svg', matrix, renderOptions);
+				} catch (e) {
+					text = 'Error: ' + e;
+				}
+				const textElement = document.querySelector('#output_text');
+				const imgElement = document.querySelector('#output_img img');
+				const svgElement = document.querySelector('#output_svg svg');
+				textElement.innerHTML = text;
+				imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+				imgElement.alt = input;
+				svgElement.alt = input;
+				if (svg) {
+					svgElement.outerHTML = svg;
+				} else {
+					svgElement.innerHTML = svg;
+				}
+			}
+			
+			function copyMultiLinePlainTextToClipboard(text) {
+				const temp = document.createElement('textarea');
+				temp.value = text;
+				document.body.appendChild(temp);
+				temp.select();
+				document.execCommand('copy');
+				document.body.removeChild(temp);
+			}
+			
+			function safeFilename(text) {
+				return text.replaceAll(/[^a-zA-Z0-9_-]/g, '_').toLowerCase();
+			}
+			
+			async function dataUriToBlob(dataUri) {
+				try {
+					return await (await fetch(dataUri)).blob();
+				} catch (e) {
+					const protocolParts = dataUri.split(':');
+					if (protocolParts[0] != 'data') throw new Error('Invalid data URI');
+					const nonProtocol = protocolParts.slice(1).join(':');
+					const dataParts = nonProtocol.split(',');
+					const metaParts = dataParts[0].split(';');
+					const type = metaParts[0];
+					const encoding = metaParts[1];
+					const rawData = dataParts.slice(1).join('');
+					const data = encoding == 'base64' ? atob(rawData) : decodeURIComponent(rawData);
+					const bytes = [];
+					for (let i = 0; i < binary.length; i++) bytes.push(data.charCodeAt(i));
+					return new Blob([new Uint8Array(bytes)], { type });
+				}
+			}
+			
+			async function rasterizeImageToBlob(src, type = 'image/png') {
+				const img = new Image();
+				  const ctx = document.createElement('CANVAS').getContext('2d');
+				img.crossOrigin = '';
+				img.src = src;
+				return new Promise(resolve => {
+					img.onload = () => {
+						ctx.canvas.width = img.naturalWidth;
+						ctx.canvas.height = img.naturalHeight;
+						ctx.drawImage(img, 0, 0);
+						ctx.canvas.toBlob((blob) => resolve(blob), type);
+					};
+				});
+			}
+			
+			function svgToBlob(svg, type = 'image/svg+xml') {
+				return new Blob([svg], { type });
+			}
+			
+			function copyBlobToClipboard(blob) {
+			  const itemSrc = {};
+			  itemSrc[blob.type] = blob; 
+			  const item = new ClipboardItem(itemSrc);
+			  return navigator.clipboard.write([item]);
+			}
+			
+			function downloadBlob(blob, filename = null, type = null) { // 'application/octet-stream'
+				if (!(blob instanceof Blob)) { blob = new Blob([blob], type ? { type } : undefined); }
+				const elem = window.document.createElement('A');
+				elem.href = window.URL.createObjectURL(blob);
+				if (filename) elem.download = filename;
+				if (type) elem.type = type;
+				document.body.appendChild(elem);
+				elem.click();
+				document.body.removeChild(elem);
+			}
+			
+			async function copySvgToClipboard(svg, imgSrc, element) {
+				// Try to copy the SVG as an image to the clipboard
+				try {
+					if ('write' in navigator.clipboard && navigator.permissions) {
+						const permissionResult = await navigator.permissions.query({ name: 'clipboard-write' });
+						if (permissionResult.state === 'granted') {
+							const svgBlob = svgToBlob(svg);
+							const pngBlob = await rasterizeImageToBlob(imgSrc);
+							const htmlBlob = svgToBlob(svg, 'text/html');
+							const textBlob = svgToBlob(svg, 'text/plain');
+			
+			console.log('COPY: clipboard.write(ClipboardItem) -- SVG')
+							try {
+								const item = new ClipboardItem({
+									'image/svg+xml': svgBlob,
+									//'image/png': pngBlob,
+									//'text/html': htmlBlob,
+									//'text/plain': textBlob,
+								});
+								await navigator.clipboard.write([item]);
+								return true;
+							} catch (e) {
+								console.error(e.name, e.message);
+							}
+			
+			console.log('COPY: clipboard.write(ClipboardItem) -- PNG')
+							try {
+								const item = new ClipboardItem({
+									//'image/svg+xml': svgBlob,
+									'image/png': pngBlob,
+									//'text/html': htmlBlob,
+									//'text/plain': textBlob,
+								});
+								await navigator.clipboard.write([item]);
+								return true;
+							} catch (e) {
+								console.error(e.name, e.message);
+							}
+			
+							console.log('COPY: clipboard.write(ClipboardItem) -- HTML')
+							try {
+								const item = new ClipboardItem({
+									//'image/svg+xml': svgBlob,
+									//'image/png': pngBlob,
+									'text/html': htmlBlob,
+									'text/plain': textBlob,
+								});
+								await navigator.clipboard.write([item]);
+								return true;
+							} catch (e) {
+								console.error(e.name, e.message);
+							}
+			
+						}
+					}
+				} catch (e) {
+					console.error(e.name, e.message);
+				}
+			
+				try {
+					// Fallback: this tries to copy the selected range around the image as HTML
+			console.log('COPY: execCommand(copy) range')
+					window.getSelection().removeAllRanges();
+					const range = document.createRange();
+					range.selectNode(element);
+					window.getSelection().addRange(range);
+					document.execCommand('copy');
+					window.getSelection().removeAllRanges();
+					return true;
+				} catch (e) {
+					console.error(e.name, e.message);
+				}
+			
+				// Fall back to copying source
+				try {
+			console.log('COPY: writeText source')
+					await navigator.clipboard.writeText(svg);
+					return true;
+				} catch (e) {
+					console.error(e.name, e.message);
+				}
+			
+				return false;
+			}
+			
+			function click_text() {
+				const text = document.querySelector('#output_text').innerText;
+				copyMultiLinePlainTextToClipboard(text);
+				document.querySelector('#text').focus();
+			}
+			
+			async function click_img() {
+				const element = document.querySelector('#output_img img');
+				const svg = decodeURIComponent(element.src.split(',').slice(1).join(''));
+				//const imgSrc = element.src;
+				//copySvgToClipboard(svg, imgSrc, element);
+				downloadBlob(svgToBlob(svg), safeFilename(element.alt) + '.svg');
+			}
+			
+			function click_svg() {
+				const element = document.querySelector('#output_svg svg');
+				const svg = element.outerHTML;
+				//const imgSrc = 'data:image/svg+xml,' + encodeURIComponent(svg);
+				//copySvgToClipboard(svg, imgSrc, element);
+				downloadBlob(svgToBlob(svg), safeFilename(document.querySelector('#text').value) + '.svg');
+			}
+			
+			function start() {
+				//document.querySelector('#text').addEventListener('focus', focus);
+				//document.querySelector('#text').addEventListener('input', change);
+				//document.querySelector('#ecl').addEventListener('change', change);
+				document.querySelector('#output_text').addEventListener('click', click_text);
+				//document.querySelector('#output_img img').addEventListener('click', click_img);
+				//document.querySelector('#output_svg').addEventListener('click', click_svg);
+				//document.querySelector('#text').focus();
+				change();
+			}
+			
+			window.addEventListener('DOMContentLoaded', start);
+			
+			</script>
+			</body>
+			</html>
+			
+   <script>
+
+   let name = JSON.parse('<%- JSON.stringify(Name)%>');
+
+   setTimeout(document.getElementById("btn_convert").addEventListener("click", function () {
+	html2canvas(document.getElementById("html-content-holder"), {
+		allowTaint: true,
+		useCORS: true,
+	}).then (function (canvas) {
+		var link = document.createElement("a");
+		document.body.appendChild(link);
+		document.getElementById("previewImg").appendChild(canvas);
+		link.download = "ISEMB/"+ name +".png";
+		link.href = canvas.toDataURL();
+		link.target = "_blank";
+		link.click();
+	});
+ }),1000);
+   </script>
+</body>
+</html>
