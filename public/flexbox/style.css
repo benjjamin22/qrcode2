@@ -115,8 +115,8 @@ padding: 5px;
 
 
 .header .boarder img {
-  max-width: 100px;
-  min-height: 250px;
+  max-width: 170px;
+  min-height: 330px;
   margin: 5px;
   justify-self:centrr;
   border-radius: 10px;
@@ -134,6 +134,7 @@ padding: 5px;
   border-radius: 10px;
   justify-content: center;
   justify-self:centrr;
+  align-items: center;
 }
 
 .header button {
