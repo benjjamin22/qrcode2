@@ -7,6 +7,8 @@ const programOptions = {
     output: 'medium',
     uppercase: false,
     file: null,
+    width:'200',
+    height:'2⁰0',
 }
 const qrOptions = {}
 const renderOptions = {};
@@ -68,8 +70,7 @@ if (programOptions.uppercase) {
     programOptions.text = programOptions.text.toUpperCase();
 }
 //console.log('output=' + programOptions.output + ' \"' + programOptions.text + '\"');
-const size ='100"
-const matrix = QrCode.generate(programOptions.text, {width=size, height=size}, qrOptions);
+const matrix = QrCode.generate(programOptions.text, qrOptions);
 const output = QrCode.render(programOptions.output, matrix, renderOptions);
 if (programOptions.file) {
     if (typeof output != 'string') {

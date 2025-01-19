@@ -242,7 +242,6 @@
 }
 
 function change() {
-        const size = 200
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -278,9 +277,6 @@ function change() {
 
     };
    
-
-
-
 
 
 function copyMultiLinePlainTextToClipboard(text) {
@@ -321,7 +317,6 @@ function svgToBlob(svg, type = 'image/svg+xml') {
 function click_text() {
 	const text = document.querySelector('#output_text').innerText;
 	copyMultiLinePlainTextToClipboard(text);
-	rasterizeImageToBlob(text)
 	document.querySelector('#text').focus();
 }
 
