@@ -230,7 +230,7 @@ max-height: 45rem;
     max-width: 270px;
 }
     .header .boarder {
-    max-width: 300px;
+    width: 300px;
     }
 .navbar .container {
   display: block;
