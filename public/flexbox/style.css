@@ -119,6 +119,7 @@ padding: 5px;
   min-height: 250px;
   margin: 5px;
   justify-self:centrr;
+  border-radius: 10px;
 }
 
 .header .boarder {
