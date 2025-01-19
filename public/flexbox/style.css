@@ -226,9 +226,12 @@ max-height: 45rem;
   height: 150px;
     
   }
-  .header img {
-    max-width: 300px;
+  .header .boarder img {
+    max-width: 270px;
 }
+    .header .boarder {
+    max-width: 300px;
+    }
 .navbar .container {
   display: block;
   justify-content: center;  
