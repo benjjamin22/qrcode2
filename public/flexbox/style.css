@@ -121,6 +121,7 @@ padding: 5px;
 }
 
 .header button {
+  text-decoration: none;
   flex: 1;
   background: black;
   color: #fff;
@@ -130,6 +131,11 @@ padding: 5px;
   padding: 15px 20px; 
   width: 150px;
 }
+.header button a {
+  text-decoration: none;
+ color: #fff;
+}
+
 
 .header .container {
   display: flex;
