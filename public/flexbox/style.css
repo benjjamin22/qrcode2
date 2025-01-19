@@ -114,17 +114,25 @@ padding: 5px;
 }
 
 
-.header img {
+.header .boarder img {
   max-width: 100px;
   min-height: 250px;
   margin: 5px;
+  justify-self:centrr;
 }
 
 .header .boarder {
-  max-width: 200px;
-  min-height: 350px;
+  width: 200px;
+  height: 350px;
   margin: 5px;
-  background-color: Transparent;
+  border: 1px solid #fff;
+  padding: 35px 10px;
+  background-color: transparent;
+	background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  justify-content: center;
+  justify-self:centrr;
 }
 
 .header button {
