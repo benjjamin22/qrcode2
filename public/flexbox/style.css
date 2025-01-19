@@ -226,12 +226,10 @@ max-height: 45rem;
   height: 150px;
     
   }
-  .header .boarder img {
+  .header img {
     max-width: 270px;
 }
-    .header .boarder {
-    width: 300px;
-    }
+    
 .navbar .container {
   display: block;
   justify-content: center;  
