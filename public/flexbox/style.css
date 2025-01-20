@@ -148,10 +148,10 @@ padding: 5px;
 }
 
 .boarders img {
-  max-width: 170px;
+  max-width: 185px;
   min-height: 330px;
   margin: 5px;
-  justify-self:centrr;
+  justify-self:center;
   border-radius: 10px;
 }
 
@@ -166,7 +166,7 @@ padding: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   justify-content: center;
-  justify-self:centrr;
+  justify-self:center;
   align-items: center;
 }
 
@@ -246,6 +246,15 @@ max-height: 45rem;
     display: block;
     text-align: center;
   }
+
+  .exec .boarders {
+    width: 250px;
+    margin: 10px;
+  }
+  .exec .boarders img{
+    max-width: 200px;
+  }
+
   .navbar .container .logodiv {
     display: block;
     text-align: center;
@@ -257,9 +266,9 @@ max-height: 45rem;
   }
 
   .navbar  {
-  height: 150px;
-    
+  height: 150px; 
   }
+
   .header img {
     max-width: 270px;
 }
@@ -270,9 +279,10 @@ max-height: 45rem;
 }
 
 .boarder {
-  background-size: 50%;
-  width: 830px;
-  height: 250px;
+  width: 320px;
+  height: 350px;
+  margin: 0px;
+  border: none;
 
 }
 }
