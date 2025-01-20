@@ -120,10 +120,7 @@ padding: 5px;
   margin: 5px;
   justify-self:centrr;
   border-radius: 10px;
-  background-image: url("photp6..png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  
 }
 
  .boarder {
@@ -139,6 +136,10 @@ padding: 5px;
   justify-content: center;
   justify-self:centrr;
   align-items: center;
+  background-image: url("photpf..png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .exec {
@@ -241,7 +242,7 @@ max-height: 45rem;
     text-align: center;
   }
 
-  .boxes .container {
+  .exec {
     display: block;
     text-align: center;
   }
@@ -266,5 +267,12 @@ max-height: 45rem;
 .navbar .container {
   display: block;
   justify-content: center;  
+}
+
+.boarder {
+  background-size: 50%;
+  width: 830px;
+  height: 250px;
+
 }
 }
