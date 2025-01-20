@@ -136,10 +136,10 @@ padding: 5px;
   justify-content: center;
   justify-self:centrr;
   align-items: center;
-  background-image: url("photpf..png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  animation: animate 16s ease-in-out infinite;
 }
 
 .exec {
@@ -234,6 +234,21 @@ max-height: 45rem;
   font-size: 20px;
   }
 
+  @keyframes animate {
+    0%,100%{
+      background-image: url(photpd..png)
+    }
+    25%{
+      background-image: url(photpe..png)
+    }
+    50%{
+      background-image: url(photpf..png)
+    }
+    75%{
+      background-image: url(photpx..png)
+    }
+  }
+
 
 @media (max-width: 768px) {
   .header .container {
@@ -283,6 +298,6 @@ max-height: 45rem;
   height: 350px;
   margin: 0px;
   border: none;
-
+  
 }
 }
