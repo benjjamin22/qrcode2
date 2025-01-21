@@ -27,22 +27,17 @@ body {
     flex-wrap: wrap;
     padding-bottom:.5rem;
 }
-
-.profile-top {
-    background-color: rgb(8, 109, 42);
-    background-image: url("/op.JPG");
+.ccontainer {
+    max-width: 550px;
+    height: 820px;
+    margin: 30px auto;
+    background-image: url("/public/flexbox/isembback.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    padding: .5rem 2rem;
-    text-align: center;
-    color: white;
-    border-radius: 0px;
-    margin: auto 0rem;
-    flex-wrap: wrap;
+    background-size: 95%;
+    background-position: center;
     justify-content: center;
-    align-items: center;
-    
-}
+    display: flex;
+  }
 
 .profile-top img {
     justify-self: center;

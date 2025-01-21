@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #a1c3ff;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+width: 400px;
+  height: 700px;
+  margin: 30px auto;
+  background-image: url("isembback.png");
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: center;
+  justify-content: right;
+  display: flex;
+}
+.main {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 1000px;
+  background-color: aqua;
+  margin-left: 80px;
+}
+.main h2 {
+ margin-bottom: 0px;
+ font-size: 8px;
+ font-weight: bold;
+}
+.main h1 {
+  margin-top: 0px;
+  font-size: 20px;
+ }
+ 
+
+
+
+
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .exec {
+    display: block;
+    text-align: center;
+  }
+
+  .exec .boarders {
+    width: 250px;
+    margin: 10px;
+  }
+  .exec .boarders img{
+    max-width: 200px;
+  }
+
+  .navbar .container .logodiv {
+    display: block;
+    text-align: center;
+    text-align: center;
+  }
+  .navbar .container .nav {
+    display: none;
+    
+  }
+
+  .navbar  {
+  height: 150px; 
+  }
+
+  .header img {
+    max-width: 270px;
+}
+    
+.navbar .container {
+  display: block;
+  justify-content: center;  
+}
+
+.boarder {
+  width: 320px;
+  height: 350px;
+  margin: 0px;
+  border: none;
+  
+}
+}

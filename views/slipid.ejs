@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<link rel="stylesheet" href="isembb.css">
+	<link rel="stylesheet" href="styo.css">
+	<link rel="stylesheet" href="./IEMB/cardgrid.css">
     
     <title>singleuser</title>
 </head>
@@ -31,58 +32,87 @@
 		font-smooth: never;
 		text-rendering: optimizeSpeed;
 		line-height: 1.1;
-		white-space: nowrap;		
+		white-space: nowrap;
+		
+		
 	}
+
+	
 	/* Fix for monospace fonts where the space is not the same width as the block characters */
 	#output_text span {
 		display: inline-block;
 		width: 1ch;
 	}
 	#output_img, #output_svg {
-		cursor: copy;	
+		cursor: copy;
+		
+		
+		
 	}
 	#output_img img, #output_svg svg {
 		max-width: 50vw;
+		
+		
+	
 	}
 	</style>
 
 <body >
 	
-
-            <div class="container" id="html-content-holder" >
-				<v style="display: block;justify-content: center; width:450px;margin-top: 9.7rem;" class="conti">
-					<div style="justify-content: center;text-align: center;">
-				<div style="border: 1px solid #fff;padding: 35px 10px;background-color: transparent;height: 12rem;;
-				min-width: 10.5rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				border-radius: 10px;justify-self: center;margin-bottom: 2.8rem;margin-left: 85px;"><img style="margin-top: 0rem;justify-self: center;" src="<%=Picturepath%>" >
+    <div style="display: flex; margin-top: 0rem;">
+        <div style="list-style-type: none;color:black; margin-top: 0rem; ">
+            <div class="user-profile nimated ounceInLeft" id="html-content-holder" >
+				<div class="ccontainer">
+                <iv class="profile-top" style="margin-top: 0rem;justify-content: center;" >
+					<div style="justify-content: center; justify-self: center;">
+                    <div class="profile-info" style="border: 1px solid #fff;padding: 35px 10px;background-color: transparent;height: 22rem;;
+					width: 19rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;"><img style="margin-top: 0rem;justify-self: center;" src="<%=Picturepath%>" >
+					</div>
 				</div>
-			</div>
-				<div style="justify-content: center;text-align: center;margin-bottom: -20px;">
-					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 7rem;"><%=Name%> </h1> 
-					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 110px;"><%=Mname%>  <%=Surname%></h2> 
-					<h1 style="margin-top:-5px;margin-bottom:0px;line-height:1rem;color: black;font-size: 15px;margin-left: 20px;">>>>NIN:-<%=NIN%><<<</h1>
-				</div>
-				<div style="justify-content: center;text-align: center;">
-				  <div  id="facttext" ></div>
-				  <div style="height: 180px;width: 180px;margin-left: 10rem;" id="output_img">
-					<img src="" alt="">
-				  </div>
-			    </div>
-			</div>
-		</div>
-				<div class="profile-bottom" style="margin-bottom:-25px;width: 200px;justify-content: center;justify-self: center;";>
-					    <div class="profile-info hover" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;">
-							<div class="hover" style="margin-left: 0px;align-items: center;width: 100%;text-align: center;justify-self: center;" >
+					<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+						<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+						<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+					</svg>
+                    <div class="profile-info">
+                        <h1 style="color:white;text-align:center;margin-bottom:7px;margin-top: 7px; line-height:2rem;font-size: 3rem;font-weight: bolder;"><%=Name%> </h1> 
+						<h2 style="color:white;text-align:center;margin-bottom:0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;"><%=Mname%>  <%=Surname%></h2> 
+                        <h1 style="margin-top:3px;margin-bottom:0px;line-height:1rem;color: yellow;">>>>NIN:-<%=NIN%><<<</h1>
+                    </div>
+                </div>
+                    <div class="profile-bottom">   
+                                <div  style="justify-content: center; justify-self: center;margin-top: 10px;"> 
+									<div style="justify-content: center; justify-self: center;">
+										<div  class="profile-info">  
+											<div id="facttext" ></div>
+											<div id="qrcode" ></div>
+												<div id="output_text">
+													
+												</div>
+											</div>	
+									  </div>
+									
+									<h1 style="margin-top:10px;color:black;font-size:15px;text-align: center;margin-bottom: 10px;" >In case of emergency scan the qrcode above to get STUDENT'S PARENT NUMBER. Only authorised person is allowed to scane student qrcode</h1>
+								   <h1 style="margin-top:10px;color:black;font-size:15px;text-align: center;margin-bottom: 10px;">Time created: <%=time%> </h1> 
+                                </div>
+                       
+                    </div>  
+					   
+                </div>
+				<div class="profile-bottom" style="margin-bottom:-25px;";>
+					<div class="profile-info hover" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;">
+							<div class="hover" style="margin-left: 0px;align-items: center;width: 100%;text-align: center;" >
 								<h1>Download</h1>
 								<div id="previewImg" style="display: none"></div>
 							</div>              
 						</div>                          
 				</div>
-			
-			
+			</div> 
+            </div>
 		
-		
-      
+        </div>
+        
+    </div>
 
 	<details style="display: none;" >
 		<summary>Text</summary>
@@ -93,7 +123,7 @@
 		
 		<details style="display: none;" open>
 		<summary>Image &lt;img&gt;</summary>
-		<div style="height: 100px;width: 100px;" id="output_img">
+		<div id="output_img">
 		  <img src="" alt="">
 		</div>
 		</details>
@@ -229,7 +259,7 @@ window.addEventListener('DOMContentLoaded', start);
 
    let name = JSON.parse('<%- JSON.stringify(Name)%>');
 
-   document.getElementById("btn_convert").addEventListener("click", function () {
+   setTimeout(document.getElementById("btn_convert").addEventListener("click", function () {
 	html2canvas(document.getElementById("html-content-holder"), {
 		allowTaint: true,
 		useCORS: true,
@@ -242,7 +272,7 @@ window.addEventListener('DOMContentLoaded', start);
 		link.target = "_blank";
 		link.click();
 	});
- });
+ }),1000);
    </script>
 </body>
 </html>
