@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>ISEMB ID SLIP</title>
+  </head>
+  <body>
+    
+    <section class="boxes">   
+    <div class="container">
+        <div style="height: 60px; width: 400px; background-color: blue;margin-top: 10px;border-radius: 10px;margin-bottom: 10px;" class="schools">
+           <input style="width: 90%;height: 60%;border-radius: 10px;" type="text" id="School"  placeholder="Search...." onkeyup="myFunction()" >
+        </div>
+     </div>
+     <div class="display">
+        <ul id="myUL" >
+      <div class="container">
+        <div class="box">
+          <div style="display: flex;">
+            <li><i style="margin-left: 0px;font-size: 20px;margin-top: 5px;" class="fas fa-arrows-alt"></i><h2 style="margin-left: 5px;">Owerri Girls Sec. School</h2></li>
+          </div>
+          <div style="display: flex;">
+            <i style="margin-left: 5px;margin-top: 5px;font-size: 20px;" class="fas fa-mobile"></i><p style="margin-left: 10px;">Phort Harcourt Rd, Owerri</p>
+          </div>
+          <div style="display: flex;">
+            <i style="margin-left: 5px;margin-top: 5px;font-size: 20px;" class="fas fa-arrows-alt-v"></i><p style="margin-left: 10px;">1000</p>
+          </div>
+        </div>
+
+        <div class="box">
+            <li><h2><i class="fas fa-arrows-alt"></i>Holy Ghost Sec. School</h2></li>
+          <p>
+            Flexbox usually solves tricky problems including e
+          </p>
+        </div>
+
+        <div class="box">
+            <li><h2><i class="fas fa-mobile"></i>Akwakuma Girls Sec. Sch.</h2></li>
+          <p>
+            Flexbox makes building a website layout (and r
+          </p>
+        </div>
+        <div class="box">
+            <li><h2><i class="fas fa-arrows-alt-v"></i> Alignment & Space</h2></li>
+          <p>
+            A more efficient way to lay out, align and distribute 
+          </p>
+        </div>
+
+        <div class="box">
+            <li><h2><i class="fas fa-arrows-alt"></i>Tricky Positioning</h2></li>
+          <p>
+            Flexbox usually solves tricky problems including e
+          </p>
+        </div>
+
+        <div class="box">
+            <li><h2><i class="fas fa-mobile"></i>Responsive Design</h2></li>
+          <p>
+            Flexbox makes building a website layout 
+          </p>
+        </div>
+      </div>
+    </section>
+</ul>
+</div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("School");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+   
+  </body>
+</html>
