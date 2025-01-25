@@ -242,10 +242,6 @@
 }
 
 function change() {
-        const options = {
-style.width = '50px';
-style.height = '50px';
-	}
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -256,7 +252,7 @@ style.height = '50px';
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input,qrOptions);
-		text = renderHtml(matrix,options);
+		text = renderHtml(matrix);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
