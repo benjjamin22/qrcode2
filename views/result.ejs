@@ -169,12 +169,6 @@
 												<div id="output_text">
 													
 												</div>
-	<details open>
-		<summary>Image &lt;img&gt;</summary>
-		<div id="output_img">
-		  <img src="" alt="">
-		</div>
-		</details>
 											</div>	
 									  </div>
 									
@@ -248,7 +242,10 @@
 }
 
 function change() {
-
+        const options = {
+width = 50
+he8ght = 50
+	}
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -259,7 +256,7 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input,qrOptions);
-		text = renderHtml(matrix);
+		text = renderHtml(matrix,options);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
