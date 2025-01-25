@@ -242,6 +242,10 @@
 }
 
 function change() {
+const options = {
+  width: 150,  // Width of the QR Code
+  height: 150, // Height of the QR Code
+};
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -251,7 +255,7 @@ function change() {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
 			optimizeEcc: ecl.includes('+'),
 		};
-		const matrix = QrCode.generate(input, qrOptions);
+		const matrix = QrCode.generate(input, options,qrOptions);
 		text = renderHtml(matrix);
 		const renderOptions = {
 		};
