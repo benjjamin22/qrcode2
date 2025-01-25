@@ -200,7 +200,7 @@
 		</div>
 		</details>
 		
-		<details style="display: none;" open>
+		<details open>
 		<summary>Image &lt;img&gt;</summary>
 		<div id="output_img">
 		  <img src="" alt="">
@@ -242,10 +242,7 @@
 }
 
 function change() {
-const options = {
-  width: 10,  // Width of the QR Code
-  height: 10, // Height of the QR Code
-};
+
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
 	let svg;
@@ -255,7 +252,7 @@ const options = {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
 			optimizeEcc: ecl.includes('+'),
 		};
-		const matrix = QrCode.generate(input, options,qrOptions);
+		const matrix = QrCode.generate(input,qrOptions);
 		text = renderHtml(matrix);
 		const renderOptions = {
 		};
@@ -320,6 +317,7 @@ function svgToBlob(svg, type = 'image/svg+xml') {
 
 function click_text() {
 	const text = document.querySelector('#output_text').innerText;
+        rasterizeImageToBlob(src, type = 'image/png') ;
 	copyMultiLinePlainTextToClipboard(text);
 	document.querySelector('#text').focus();
 }
