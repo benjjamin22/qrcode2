@@ -252,27 +252,27 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input,qrOptions);
-                text = renderHtml(matrix);
+	const resizedCanvas = document.querySelector('#output_text');
+	const imgElement = document.querySelector('#output_img img');
+	const svgElement = document.querySelector('#output_svg svg');
+
+    const scaleFactor = 0.5; // Adjust this value to your desired size (e.g., 0.5 for half size)
+    const originalWidth = matrix.width;
+    const originalHeight = matrix.height;
+
+    resizedCanvas.width = originalWidth * scaleFactor;
+    resizedCanvas.height = originalHeight * scaleFactor;
+
+    const context = resizedCanvas.getContext('2d');
+    const matrixx = context.drawImage(matrix, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
+
+              text = renderHtml(matrixx);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
 	} catch (e) {
 		text = 'Error: ' + e;
 	}
-	const resizedCanvas = document.querySelector('#output_text');
-	const imgElement = document.querySelector('#output_img img');
-	const svgElement = document.querySelector('#output_svg svg');
-
-    const scaleFactor = 0.5; // Adjust this value to your desired size (e.g., 0.5 for half size)
-    const originalWidth = text.width;
-    const originalHeight = text.height;
-
-    resizedCanvas.width = originalWidth * scaleFactor;
-    resizedCanvas.height = originalHeight * scaleFactor;
-
-    const context = resizedCanvas.getContext('2d');
-    const matrixx = context.drawImage(text, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
-		
 	resizedCanvas.innerHTML = text;
 	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
