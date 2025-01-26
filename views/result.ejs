@@ -262,9 +262,9 @@ const scaleFactor = 0.5; // Adjust this value to your desired size (e.g., 0.5 fo
     resizedCanvas.height = originalHeight * scaleFactor;
 
     const context = resizedCanvas.getContext('2d');
-    context.drawImage(matrix, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
+    const matrixx = context.drawImage(matrix, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
 
-                text = renderHtml(context);
+                text = renderHtml(matrixx);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
