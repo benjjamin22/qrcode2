@@ -280,8 +280,8 @@ async function rasterizeImageToBlob(src, type = 'image/png') {
 	img.src = src;
 	return new Promise(resolve => {
 		img.onload = () => {
-			ctx.canvas.width = 100;
-			ctx.canvas.height = 100;
+			ctx.canvas.width = 600;
+			ctx.canvas.height = 600;
 			ctx.drawImage(img);
 			ctx.canvas.toBlob((blob) => resolve(blob), type);
 		};
