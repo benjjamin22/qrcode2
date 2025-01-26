@@ -166,9 +166,9 @@
 										<div  class="profile-info">  
 											<div id="facttext" ></div>
 											<div id="qrcode" ></div>
-												<canvas id="output_text">
+												<div id="output_text">
 												
-												</canvas>
+												</div>
 											</div>	
 									  </div>
 									
@@ -271,21 +271,6 @@ function change() {
 	} else {
 		svgElement.innerHTML = svg;
 	}
-}
-
-async function rasterizeImageToBlob(src, type = 'image/png') {
-	const img = new Image(text);
-	  const ctx = document.createElement('CANVAS').getContext('2d');
-	img.crossOrigin = '';
-	img.src = src;
-	return new Promise(resolve => {
-		img.onload = () => {
-			ctx.canvas.width = 600;
-			ctx.canvas.height = 600;
-			ctx.drawImage(img);
-			ctx.canvas.toBlob((blob) => resolve(blob), type);
-		};
-	});
 }
                                                 facttext.appendChild(li)
 												change();
