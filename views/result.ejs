@@ -165,7 +165,7 @@
 									<div style="justify-content: center; justify-self: center;">
 										<div  class="profile-info">  
 											<div id="facttext" ></div>
-											<div id="qrcode" ></div>
+											<canvas id="qrcode" ></canvas>
 												<div id="output_text">
 												
 												</div>
@@ -331,6 +331,37 @@ function start() {
     //document.querySelector('#text').focus();
     
 }
+
+    // Example: Resize an image
+    const img = new Image(text);
+    img.src = text; // Replace with the URL of your object/image
+    img.onload = () => {
+        const originalWidth = img.width;  // Original image width
+        const originalHeight = img.height; // Original image height
+
+        // Set the desired dimensions
+        const targetWidth = 128; // Desired width
+        const targetHeight = 128; // Desired height
+
+        // Get the canvas element
+        const canvas = document.getElementById('qrcode');
+        const ctx = canvas.getContext('2d');
+
+        // Resize the canvas to match the target size
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+
+        // Draw the resized object onto the canvas
+        ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+
+        // Optional: Log the resized image as a data URL
+        const resizedImageDataURL = canvas.toDataURL();
+        console.log('Resized Image Data URL:', resizedImageDataURL);
+    };
+
+</body>
+</html>
+
 
 
 window.addEventListener('DOMContentLoaded', start);
