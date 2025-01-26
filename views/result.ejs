@@ -333,7 +333,7 @@ function start() {
 }
 
     // Example: Resize an image
-    const img = new Image(text);
+    const img = new Image();
     img.src = text; // Replace with the URL of your object/image
     img.onload = () => {
         const originalWidth = img.width;  // Original image width
@@ -356,6 +356,7 @@ function start() {
 
         // Optional: Log the resized image as a data URL
         const resizedImageDataURL = canvas.toDataURL();
+canvas.innerHTML = resizedImageDataURL
         console.log('Resized Image Data URL:', resizedImageDataURL);
     };
 
