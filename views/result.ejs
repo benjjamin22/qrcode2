@@ -266,7 +266,7 @@ function change() {
     const context = resizedCanvas.getContext('2d');
     context.drawImage(matrix, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
 
-              text = renderHtml(context);
+              text = renderHtml(matrix);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
