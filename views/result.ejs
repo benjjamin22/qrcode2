@@ -200,7 +200,7 @@
 		</div>
 		</details>
 		
-		<details open>
+		<details style="display:none;" open>
 		<summary>Image &lt;img&gt;</summary>
 		<div id="output_img">
 		  <img src="" alt="">
@@ -252,7 +252,16 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input,qrOptions);
-		text = renderHtml(matrix);
+    const scaleFactor = 0.5; // Adjust this value to your desired size (e.g., 0.5 for half size)
+    const originalWidth = matrix.width;
+    const originalHeight = matrix.height;
+
+    resizedCanvas.width = originalWidth * scaleFactor;
+    resizedCanvas.height = originalHeight * scaleFactor;
+
+    const context = resizedCanvas.getContext('2d');
+    const matrixx = context.drawImage(matrix, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
+		text = renderHtml(matrixx);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
