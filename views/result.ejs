@@ -252,27 +252,16 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input,qrOptions);
-	const resizedCanvas = document.querySelector('#output_text');
-	const imgElement = document.querySelector('#output_img img');
-	const svgElement = document.querySelector('#output_svg svg');
-
-    const scaleFactor = 0.5; // Adjust this value to your desired size (e.g., 0.5 for half size)
-    const originalWidth = matrix.width;
-    const originalHeight = matrix.height;
-
-    resizedCanvas.width = originalWidth * scaleFactor;
-    resizedCanvas.height = originalHeight * scaleFactor;
-
-    const context = resizedCanvas.getContext('2d');
-    context.drawImage(matrix, 0, 0, originalWidth, originalHeight, 0, 0, resizedCanvas.width, resizedCanvas.height);
-
-              text = renderHtml(matrix);
+                text = renderHtml(matrix);
 		const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
 	} catch (e) {
 		text = 'Error: ' + e;
 	}
+	const resizedCanvas = document.querySelector('#output_text');
+	const imgElement = document.querySelector('#output_img img');
+	const svgElement = document.querySelector('#output_svg svg');
 	resizedCanvas.innerHTML = text;
 	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
