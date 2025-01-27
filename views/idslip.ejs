@@ -153,7 +153,19 @@ function change() {
 	const textElement = document.querySelector('#output_text');
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
-	textElement.innerHTML = text;
+	const parent = text.parentNode
+const newSize = 100,
+      canvas = document.createElement("canvas"),
+      ctx = canvas.getContext("2d"),
+      newImage = new Image();
+
+  canvas.width = canvas.height = newSize;
+  ctx.drawImage(text, 0, 0, newSize, newSize);
+parent.removeChild(text)
+  newImage.src = canvas.toDataURL();
+  
+
+	resizedCanvas.innerHTML = newImage;
 	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
