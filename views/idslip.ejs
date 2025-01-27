@@ -48,26 +48,30 @@
 
 <body >
 	
-
+<div style="margin-bottom: -60px;">
             <div class="container" id="html-content-holder" >
 				<v style="display: block;justify-content: center; width:450px;margin-top: 9.7rem;" class="conti">
 					<div style="justify-content: center;text-align: center;">
 				<div style="padding: 35px 10px;background-color: transparent;height: 12rem;;
 				min-width: 10.5rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				border-radius: 10px;justify-self: center;margin-bottom: 2.8rem;margin-left: 85px;"><img style="margin-top: -2.3rem;justify-self: center;height: 12rem;width: 10.5rem;border-radius: 10px;" src="<%=Picturepath%>" >
+				border-radius: 10px;justify-self: center;margin-bottom: 2.8rem;margin-left: 130px;margin-top: 3rem;"><img style="margin-top: -2.3rem;justify-self: center;height: 12rem;width: 10.5rem;border-radius: 10px;" src="<%=Picturepath%>" >
 				</div>
 			</div>
 				<div style="justify-content: center;text-align: center;margin-bottom: -20px;">
-					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 7rem;"><%=Name%> </h1> 
-					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 110px;"><%=Mname%>  <%=Surname%></h2> 
-					<h1 style="margin-top:-5px;margin-bottom:0px;line-height:1rem;color: black;font-size: 15px;margin-left: 20px;">>>>NIN:-<%=NIN%><<<</h1>
+					
+					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 8rem;"><%=Name%> </h1>
+			
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 125px;"> <%=Mname%> <%=Surname%></h2>
+				
+					<h1 style="margin-top:-1px;margin-bottom:0px;line-height:1rem;color: red;font-size: 18px;margin-left: 120px;">>>>STUDENT<<<</h1>
 				</div>
-				<div style="justify-content: center;text-align: center;">
+				<div style="justify-content: center;text-align: center;height: 170px;width: 170px;">
 				  <div  id="facttext" ></div>
-				  <div style="height: 170px;width: 170px;margin-left: 10rem;background-color: aliceblue;margin-top: 1rem;" id="output_img">
+				  <div style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 0rem;" id="output_img">
 					<img src="" alt="">
 				  </div>
-			    </div>
+				</div>
+				
 			</div>
 		</div>
 				<div class="profile-bottom" style="margin-bottom:-25px;width: 200px;justify-content: center;justify-self: center;";>
@@ -132,6 +136,8 @@
 	return QrCode.render('medium', matrix, renderOptions);
 }
 
+
+
 function change() {
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
@@ -144,7 +150,7 @@ function change() {
 		};
 		const matrix = QrCode.generate(input, qrOptions);
 		text = renderHtml(matrix);
-		const renderOptions = {
+	  const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
 	} catch (e) {
@@ -185,8 +191,28 @@ function safeFilename(text) {
 
 
 
+    const originalsize = 300;
+	const targetwidth = 150;
+	const targetheight = 150;
+    const canvas = document.createElement("canvas");
+	const ctx = canvas.getContext('2d');
+	const img = new Image();
+	img.src = text;
+	img.onload = () => {
+			canvas.width = targetwidth;
+			canvas.height = targetheight;
+			ctx.drawImage(img,0,0,targetheight,targetwidth);
+
+			const jpg = canvas.toDataURL("image/jpeg",0.9);
+			const output = document.getElementById("facttextuu");
+
+			output.innerHTML = `${jpg}`;
+			
+		};
+
+
 async function rasterizeImageToBlob(src, type = 'image/png') {
-	const img = new Image(text);
+	const img = new Image();
 	  const ctx = document.createElement('CANVAS').getContext('2d');
 	img.crossOrigin = '';
 	img.src = src;
@@ -214,7 +240,7 @@ function click_text() {
 function start() {
     //document.querySelector('#text').addEventListener('input', change);
     
-    document.querySelector('#output_text').addEventListener('click', click_text);
+    document.querySelector('#output_text').addEventListener('click', click_text());
     
     //document.querySelector('#text').focus();
     
