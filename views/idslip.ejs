@@ -73,6 +73,7 @@
 				</div>
 				
 			</div>
+<img  id="facttext" />
 		</div>
 				<div class="profile-bottom" style="margin-bottom:-25px;width: 200px;justify-content: center;justify-self: center;";>
 					    <div class="profile-info hover" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;">
@@ -95,7 +96,7 @@
 		</div>
 		</details>
 		
-		<details style="display: none;" open>
+		<details  open>
 		<summary>Image &lt;img&gt;</summary>
 		<div style="height: 100px;width: 100px;" id="output_img">
 		  <img src="" alt="">
@@ -224,6 +225,7 @@ async function rasterizeImageToBlob(src, type = 'image/png') {
 			ctx.canvas.toBlob((blob) => resolve(blob), type);
 		};
 	});
+img.src = canvas.toDataURL()
 }
 
 function svgToBlob(svg, type = 'image/svg+xml') {
