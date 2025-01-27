@@ -154,22 +154,19 @@ function change() {
 	const textElement = document.querySelector('#output_text');
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
-	const sizs = 100;
-  const img = new Image(text);
-	  const ctx = document.createElement('CANVAS').getContext('2d');
-	img.crossOrigin = '';
-	img.src = src;
-	return new Promise(resolve => {
-		img.onload = () => {
-			ctx.canvas.width = sizs;
-			ctx.canvas.height = sizs;
-			ctx.drawImage(img);
-			ctx.canvas.toBlob((blob) => resolve(blob), type);
-		};
-	});
-img.src = canvas.toDataURL()
+        const newSize = 100
+        const parent = text.parentNode,
+      canvas = document.createElement("canvas"),
+      ctx = canvas.getContext("2d"),
+      newImage = new Image();
 
-	textElement.innerHTML = img;
+  canvas.width = canvas.height = newSize;
+  ctx.drawImage(test, 0, 0, newSize, newSize);
+
+  parent.removeChild(text);
+
+  newImage.src = canvas.toDataURL();
+	textElement.innerHTML = newImage;
 	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
