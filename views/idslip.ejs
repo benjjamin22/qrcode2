@@ -150,7 +150,7 @@ function change() {
 			optimizeEcc: ecl.includes('+'),
 		};
 		const matrix = QrCode.generate(input, qrOptions);
-		//text = renderHtml(matrix);
+		text = renderHtml(matrix);
 	  const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
@@ -160,7 +160,7 @@ function change() {
 	const textElement = document.querySelector('#output_text');
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
-	textElement.innerHTML = matrix;
+	textElement.innerHTML = text;
 	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
