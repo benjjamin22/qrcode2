@@ -98,7 +98,7 @@
 		
 		<details  style="display: none;" open>
 		<summary>Image &lt;img&gt;</summary>
-		<div style="height: 100px;width: 100px;" id="output_img">
+		<div style="height: 100px;width: 100px;" id="output_text">
 		  <img src="" alt="">
 		</div>
 		</details>
@@ -161,8 +161,7 @@ function change() {
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
-        imgElement.src = bmpData
-	//imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
