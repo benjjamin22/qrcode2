@@ -64,7 +64,7 @@
 				</div>
 				<div style="justify-content: center;text-align: center;">
 				  <div  id="facttext" ></div>
-				  <div><img style="height: 170px;width: 170px;margin-left: 10rem;background-color: aliceblue;margin-top: 1rem;" id="output_text" crossOrigin="">
+				  <div style="height: 170px;width: 170px;margin-left: 10rem;background-color: aliceblue;margin-top: 1rem;" id="output_text">
 					<img src="" alt="">
 				  </div>
 			    </div>
@@ -154,19 +154,7 @@ function change() {
 	const textElement = document.querySelector('#output_text');
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
-        const newSize = 100
-        const parent = text.parentNode,
-      canvas = document.createElement("canvas"),
-      ctx = canvas.getContext("2d"),
-      newImage = new Image();
-
-  canvas.width = canvas.height = newSize;
-  ctx.drawImage(test, 0, 0, newSize, newSize);
-
-  parent.removeChild(text);
-
-  newImage.src = canvas.toDataURL();
-	textElement.innerHTML = newImage;
+	textElement.innerHTML = text;
 	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
