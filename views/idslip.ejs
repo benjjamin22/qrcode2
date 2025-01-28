@@ -161,7 +161,7 @@ function change() {
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
-imgElement.src = matrix;
+imgElement.src = 'data:image/bmp;base64,' + encoded;
 	//imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
