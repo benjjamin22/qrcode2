@@ -67,7 +67,7 @@
 				</div>
 				<div style="justify-content: center;text-align: center;height: 170px;width: 170px;">
 				  <div  id="facttext" ></div>
-				  <div style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 0rem;" id="output_text">
+				  <div style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 0rem;" id="output_img">
 					<img src="" alt="">
 				  </div>
 				</div>
@@ -159,12 +159,23 @@ function change() {
 	} catch (e) {
 		text = 'Error: ' + e;
 	}
+      const newSize = 140,
+      const oldImage = 'data:image/svg+xml,' + encodeURIComponent(svg);
+      canvas = document.createElement("canvas"),
+      ctx = canvas.getContext("2d"),
+      newImage = new Image();
+
+  canvas.width = canvas.height = newSize;
+  ctx.drawImage(oldImage, 0, 0, newSize, newSize);
+
+  newImage.src = canvas.toDataURL();
+
 	const textElement = document.querySelector('#output_text');
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
 //imgElement.src = 'data:image/bmp;base64,' + encoded(svg);
-	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+	imgElement.src = newImage
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
