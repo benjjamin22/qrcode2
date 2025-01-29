@@ -159,6 +159,7 @@ function change() {
 	} catch (e) {
 		text = 'Error: ' + e;
 	}
+      const imgElement = document.querySelector('#output_img img');
       const newSize = 140,
       const oldImage = 'data:image/svg+xml,' + encodeURIComponent(svg);
       canvas = document.createElement("canvas"),
@@ -169,13 +170,14 @@ function change() {
   ctx.drawImage(oldImage, 0, 0, newSize, newSize);
 
   newImage.src = canvas.toDataURL();
+  imgElement.appendChild(newImage)
 
 	const textElement = document.querySelector('#output_text');
-	const imgElement = document.querySelector('#output_img img');
+	//const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
 //imgElement.src = 'data:image/bmp;base64,' + encoded(svg);
-	imgElement.appendChild(newImage)
+	
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
