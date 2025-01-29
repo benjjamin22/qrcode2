@@ -175,7 +175,7 @@ function change() {
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
 //imgElement.src = 'data:image/bmp;base64,' + encoded(svg);
-	imgElement.src = newImage
+	imgElement.appendChild(newImage)
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
