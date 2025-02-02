@@ -155,29 +155,15 @@ function change() {
 		text = renderHtml(matrix);
 	  const renderOptions = {
 		};
-		svg = QrCode.render('svg', matrix, renderOptions);
+		svg = QrCode.render('bmp', matrix, renderOptions);
 	} catch (e) {
 		text = 'Error: ' + e;
 	}
-      const imgElement = document.querySelector('#output_img img');
-      const newSize = 140,
-      const oldImage = text
-      canvas = document.createElement("canvas"),
-      ctx = canvas.getContext("2d"),
-      newImage = new Image();
-
-  canvas.width = canvas.height = newSize;
-  ctx.drawImage(oldImage, 0, 0, newSize, newSize);
-
-  newImage.src = canvas.toDataURL();
-  imgElement.appendChild(newImage)
-
 	const textElement = document.querySelector('#output_text');
-	//const imgElement = document.querySelector('#output_img img');
+	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
-//imgElement.src = 'data:image/bmp;base64,' + encoded(svg);
-	
+        imgElement.src = 'data:image/bmp;base64,' + encoded(svg);	
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
