@@ -67,7 +67,7 @@
 				</div>
 				<div style="justify-content: center;text-align: center;height: 170px;width: 170px;">
 				  <div  id="facttext" ></div>
-				  <div style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 0rem;" id="output_img">
+				  <div style="margin-left: 12.3rem;margin-top: 0rem;" id="output_img">
 					<img src="" alt="">
 				  </div>
 				</div>
@@ -151,8 +151,14 @@ function change() {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
 			optimizeEcc: ecl.includes('+'),
 		};
+
 		const matrix = QrCode.generate(input, qrOptions);
 		text = renderHtml(matrix);
+const options = {
+width:140,
+height:140
+};
+bmp = QrCode.renderBmp(matrix, options);
 	  const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
@@ -163,7 +169,8 @@ function change() {
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
-        imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);	
+        //imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+        imgElement.src = bmp;
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
