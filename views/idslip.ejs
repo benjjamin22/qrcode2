@@ -155,11 +155,9 @@ function change() {
 		const matrix = QrCode.generate(input, qrOptions);
 		text = renderHtml(matrix);
 const options = {
-width:'140',
-height:'140'
+
 };
-bmp = QrCode.renderBmp(matrix);
-bmpp = 'data:image/bmp;base64,' + btoa(new Uint8Array(bmp).reduce((data, v) => data + String.fromCharCode(v), ''));
+bmp = QrCode.renderBmp(matrix, options);
 	  const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
@@ -171,7 +169,8 @@ bmpp = 'data:image/bmp;base64,' + btoa(new Uint8Array(bmp).reduce((data, v) => d
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
         //imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-        imgElement.src = bmpp;
+        imgElement.src = 'data:image/bmp;base64,' + btoa(new Uint8Array(bmp).reduce((data, v) => data + String.fromCharCode(v), ''));
+
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
