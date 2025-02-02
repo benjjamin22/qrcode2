@@ -159,6 +159,7 @@ width:'140',
 height:'140'
 };
 bmp = QrCode.renderBmp(matrix);
+bmpp = 'data:image/bmp;base64,' + btoa(new Uint8Array(bmp).reduce((data, v) => data + String.fromCharCode(v), ''));
 	  const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
@@ -170,7 +171,7 @@ bmp = QrCode.renderBmp(matrix);
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
         //imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-        imgElement.src = bmp;
+        imgElement.src = bmpp;
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
