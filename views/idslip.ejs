@@ -136,7 +136,7 @@
 width:'100',
 height:'100',
 	};
-	return QrCode.render('medium', matrix, renderOptions);
+	return QrCode.render('bmp-uri', matrix, renderOptions);
 }
 
 
@@ -163,7 +163,7 @@ function change() {
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
-        imgElement.src = 'data:image/bmp;base64,' + encoded(svg);	
+        imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);	
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
