@@ -155,8 +155,8 @@ function change() {
 		const matrix = QrCode.generate(input, qrOptions);
 		text = renderHtml(matrix);
 const options = {
-width:140,
-height:140
+width:'140',
+height:'140'
 };
 bmp = QrCode.renderBmp(matrix, options);
 	  const renderOptions = {
