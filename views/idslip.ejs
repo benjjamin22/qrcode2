@@ -155,7 +155,7 @@ function change() {
 		text = renderHtml(matrix);
 	  const renderOptions = {
 		};
-		svg = QrCode.render('svg-uri', matrix, renderOptions);
+		svg = QrCode.render('svg', matrix, renderOptions);
 	} catch (e) {
 		text = 'Error: ' + e;
 	}
