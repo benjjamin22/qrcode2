@@ -169,8 +169,8 @@ picoco = QrCode.render('bmp', matrix, options);
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
         //imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-        imgElement.src = 'data:image/bmp;base64,' + btoa(new Uint8Array(picoco).reduce((data, v) => data + String.fromCharCode(v), ''));
-
+        //imgElement.src = 'data:image/bmp;base64,' + btoa(new Uint8Array(picoco).reduce((data, v) => data + String.fromCharCode(v), ''));
+imgElement.innerHTML = picoco;
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
