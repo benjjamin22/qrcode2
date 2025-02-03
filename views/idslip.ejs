@@ -144,7 +144,6 @@ height:'100',
 function change() {
 	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
 	let text;
-let bmp;
 	let svg;
 	try {
 		const ecl = 'L+';
@@ -155,9 +154,6 @@ let bmp;
 
 		const matrix = QrCode.generate(input, qrOptions);
 		text = renderHtml(matrix);
-const renderOptions = {
-};
-bmp = QrCode.render('bmp', matrix, renderOptions);
 	  const renderOptions = {
 		};
 		svg = QrCode.render('svg', matrix, renderOptions);
@@ -168,9 +164,7 @@ bmp = QrCode.render('bmp', matrix, renderOptions);
 	const imgElement = document.querySelector('#output_img img');
 	const svgElement = document.querySelector('#output_svg svg');
 	textElement.innerHTML = text;
-        //imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-        //imgElement.src = 'data:image/bmp;base64,' + btoa(new Uint8Array(picoco).reduce((data, v) => data + String.fromCharCode(v), ''));
-imgElement.src = bmp;
+        imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
 	imgElement.alt = input;
 	svgElement.alt = input;
 	if (svg) {
