@@ -109,7 +109,7 @@ padding: 5px;
 .header h1 {
   font-size: 2rem;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .header .container p {
   color: yellow;
@@ -215,9 +215,9 @@ max-height: 45rem;
   border-radius: 10px;
   margin: 10px 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-  padding: 15px 20px;
-  width: 325px;
-  height: 100px;
+  padding: 10px 15px;
+  width: 310px;
+  height: auto;
   justify-self: center;
 }
 
@@ -236,6 +236,27 @@ max-height: 45rem;
   font-size: 20px;
   }
 
+  .languages .card:hover {
+    transform: translateY(-15px);
+}
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  margin: 10px;
+}
+
+.languages .flex {
+  flex-wrap: wrap;
+}
+
+.languages .card {
+  text-align: center;
+  margin: 18px 15px ;
+  transition: transform 0.2s ease-in;
+}
  
 
   @keyframes animate {
@@ -279,13 +300,11 @@ max-height: 45rem;
     text-align: center;
     text-align: center;
   }
-  .navbar .container .nav {
-    display: none;
-    
-  }
 
   .navbar  {
   height: 150px; 
+  justify-self: center;
+  width: 100%;
   }
 
   .header img {
@@ -295,6 +314,7 @@ max-height: 45rem;
 .navbar .container {
   display: block;
   justify-content: center;  
+  justify-self: center;
 }
 
 .boarder {
@@ -304,4 +324,15 @@ max-height: 45rem;
   border: none;
   
 }
+
+
+.navbar ul li {
+  margin-left: 10px;
+}
+
+.nav {
+  justify-content: center;
+}
+
+
 }

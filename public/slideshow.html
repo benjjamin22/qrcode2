@@ -77,3 +77,35 @@
     <div style="background-image:url(slide/images\ \(6\).jpeg)"></div>
     <div style="background-image:url(slide/images\ \(5\).jpeg)"></div>
 </div>
+
+
+
+<button id="btn">clict</button>
+<div><img id="facttextuu" src="./1.jpg"crossOrigin=""></div>
+
+<script>
+function reduceimagr(facttextuu,newsize){
+    
+    var parent = facttextuu.parentNode,
+    canvas = document.createElement("canvas"),
+     ctx = canvas.getContext('2d');
+     newimage = new Image();
+
+     canvas.height = canvas.width = newsize;
+     ctx.drawImage(facttextuu,0,0,newsize,newsize);
+
+     parent.removeChild(facttextuu);
+
+     newimage.src = canvas.toDataURL();
+
+     parent.appendChild(newimage);
+}
+     window.onload = function(){
+        var facttextuu = document.getElementById("facttextuu");
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){reduceimagr(facttextuu,100)}
+
+     }
+    
+
+ </script> 

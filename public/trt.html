@@ -1,0 +1,32 @@
+<button id="btn">clict</button>
+<div id="facttextuu"></div>
+<img id="pic" src="./1.jpg" crossOrigin="">
+
+<script>
+
+var pic= document.getElementById("pic");
+function reduceimagr(facttextuu,newsize){
+    
+    var parent = facttextuu,
+    canvas = document.createElement("canvas"),
+     ctx = canvas.getContext('2d');
+     newimage = new Image();
+
+     canvas.height = canvas.width = newsize;
+     ctx.drawImage(pic,0,0,newsize,newsize);
+
+     newimage.src = canvas.toDataURL();
+
+     parent.appendChild(newimage);
+}
+     window.onload = function(){
+        var facttextuu = document.getElementById("facttextuu");
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){reduceimagr(facttextuu,100)}
+
+     }
+    
+
+ </script> 
+			
+			

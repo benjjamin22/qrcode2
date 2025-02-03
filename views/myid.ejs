@@ -65,3 +65,430 @@
         </script>
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="isembb.css">
+    
+    <title>singleuser</title>
+</head>
+<style type="text/css">
+	html, body {
+		font-family: sans-serif;
+	}
+	.controls {
+		margin: 1em 0;
+	}
+	#text {
+		width: 90%;
+	}
+	#output_text {
+		cursor: copy;
+		font-family: monospace;
+		-webkit-font-smoothing: none;
+		font-smooth: never;
+		text-rendering: optimizeSpeed;
+		line-height: 1.1;
+		white-space: nowrap;		
+	}
+	/* Fix for monospace fonts where the space is not the same width as the block characters */
+	#output_text span {
+		display: inline-block;
+		width: 1ch;
+	}
+	#output_img, #output_svg {
+		cursor: copy;	
+	}
+	#output_img img, #output_svg svg {
+		max-width: 50vw;
+	}
+	</style>
+
+<body >
+	
+<div style="margin-bottom: -70px;">
+            <div class="container" id="html-content-holder" >
+				<v style="display: block;justify-content: center; width:450px;margin-top: 9.7rem;" class="conti">
+					<div style="justify-content: center;text-align: center;">
+				<div style="padding: 35px 10px;background-color: transparent;height: 12rem;;
+				min-width: 10.5rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				border-radius: 10px;justify-self: center;margin-bottom: 2.8rem;margin-left: 125px;margin-top: 2.9rem;"><img style="margin-top: -3.2rem;justify-self: center;height: 13rem;width: 11.3rem;border-radius: 10px;" src="<%=Picturepath%>" >
+				</div>
+			</div>
+				<div style="justify-content: center;text-align: center;margin-bottom: -20px;">
+					
+					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 8rem;font-family: impact;"><%=Name%> </h1>
+			
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 125px;"> <%=Mname%> <%=Surname%></h2>
+				
+					<h1 style="margin-top:-1px;margin-bottom:0px;line-height:1rem;color: red;font-size: 18px;margin-left: 120px;">>>>STUDENT<<<</h1>
+				</div>
+				<div >
+				 
+				  <div style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 1.7rem;" id="output_img">
+					<img src="" alt="">
+				  </div>
+				  
+				</div>
+				
+			</div>
+<img  id="facttext" />
+		</div>
+				<div class="profile-bottom" style="margin-bottom:15px;width: 200px;justify-content: center;justify-self: center;";>
+					    <div class="profile-info hover" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;">
+							<div class="hover" style="margin-left: 0px;align-items: center;width: 100%;text-align: center;justify-self: center;" >
+								<h1>Download</h1>
+								<div id="previewImg" style="display: none"></div>
+							</div>              
+						</div>                          
+				</div>
+			
+			
+		
+		
+      
+
+	<details style="display: none;" >
+		<summary>Text</summary>
+		<div id="output_text">
+		-
+		</div>
+		</details>
+		
+		<details  style="display: none;" open>
+		<summary>Image &lt;img&gt;</summary>
+		<div style="height: 100px;width: 100px;" id="output_text">
+		  <img src="" alt="">
+		</div>
+		</details>
+		
+		<details style="display: none;">
+		<summary>Image &lt;svg&gt;</summary>
+		<div id="output_svg">
+		  <svg></svg>
+		</div>
+		</details>
+		
+	
+		
+		
+   <script type="module">
+    import QrCode from '/qrcode.mjs' ;
+
+	let facttext = document.querySelector('#facttext');
+    let numberinput = JSON.parse('<%- JSON.stringify(id)%>');
+
+  
+	getfecth() 
+
+    function getfecth() {
+        
+                    const li = document.createElement('li')
+
+                                         li.innerHTML = ``
+										function renderHtml(matrix) {
+											
+	// '▀', '▄', '█' // '\u{0020}' space, '\u{2580}' upper half block, '\u{2584}' lower half block, '\u{2588}' block
+	// Figure space: '\u{2007}'
+	const renderOptions = {
+		segments: ['<span>&nbsp;</span>', '<span>▀</span>', '<span>▄</span>', '<span>█</span>'],
+		sep: '<br>',
+	};
+	return QrCode.render('medium', matrix, renderOptions);
+}
+
+
+function change() {
+	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
+	let text;
+	let svg;
+	let width = 100;
+	try {
+		const ecl = 'L+';
+		const qrOptions = {
+			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
+			optimizeEcc: ecl.includes('+'),
+		};
+		const matrix = QrCode.generate(input, qrOptions);
+		text = renderHtml(matrix);
+	  const renderOptions = {
+		};
+		svg = QrCode.render('svg', matrix, renderOptions);
+	} catch (e) {
+		text = 'Error: ' + e;
+	}
+	 
+	const textElement = document.querySelector('#output_text');
+	const imgElement = document.querySelector('#output_img img');
+	const svgElement = document.querySelector('#output_svg svg');
+	textElement.innerHTML = text;
+	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);	
+	imgElement.alt = input;
+	svgElement.alt = input;
+	if (svg) {
+		svgElement.outerHTML = svg;
+	} else {
+		svgElement.innerHTML = svg;
+	}
+}
+                                                facttext.appendChild(li)
+												change();
+
+    };
+   
+
+
+	function copyMultiLinePlainTextToClipboard(text) {
+	const temp = document.createElement('textarea');
+	temp.value = text;
+	document.body.appendChild(temp);
+	temp.select();
+	document.execCommand('copy');
+	document.body.removeChild(temp);
+}
+
+function safeFilename(text) {
+	return text.replaceAll(/[^a-zA-Z0-9_-]/g, '_').toLowerCase();
+}
+
+async function dataUriToBlob(dataUri) {
+	try {
+		return await (await fetch(dataUri)).blob();
+	} catch (e) {
+		const protocolParts = dataUri.split(':');
+		if (protocolParts[0] != 'data') throw new Error('Invalid data URI');
+		const nonProtocol = protocolParts.slice(1).join(':');
+		const dataParts = nonProtocol.split(',');
+		const metaParts = dataParts[0].split(';');
+		const type = metaParts[0];
+		const encoding = metaParts[1];
+		const rawData = dataParts.slice(1).join('');
+        const data = encoding == 'base64' ? atob(rawData) : decodeURIComponent(rawData);
+		const bytes = [];
+        for (let i = 0; i < binary.length; i++) bytes.push(data.charCodeAt(i));
+        return new Blob([new Uint8Array(bytes)], { type });
+	}
+}
+
+async function rasterizeImageToBlob(src, type = 'image/png') {
+ const size = 120;
+	const img = new Image();
+  	const ctx = document.createElement('CANVAS').getContext('2d');
+	img.crossOrigin = '';
+	img.src = src;
+	return new Promise(resolve => {
+		img.onload = () => {
+			ctx.canvas.width = img.size;
+			ctx.canvas.height = img.size;
+			ctx.drawImage(img, 0, 0);
+			ctx.canvas.toBlob((blob) => resolve(blob), type);
+		};
+	});
+}
+
+function svgToBlob(svg, type = 'image/svg+xml') {
+	return new Blob([svg], { type });
+}
+
+function copyBlobToClipboard(blob) {
+  const itemSrc = {};
+  itemSrc[blob.type] = blob; 
+  const item = new ClipboardItem(itemSrc);
+  return navigator.clipboard.write([item]);
+}
+
+function downloadBlob(blob, filename = null, type = null) { // 'application/octet-stream'
+	if (!(blob instanceof Blob)) { blob = new Blob([blob], type ? { type } : undefined); }
+	const elem = window.document.createElement('A');
+	elem.href = window.URL.createObjectURL(blob);
+	if (filename) elem.download = filename;
+	if (type) elem.type = type;
+	document.body.appendChild(elem);
+	elem.click();
+	document.body.removeChild(elem);
+}
+
+async function copySvgToClipboard(svg, imgSrc, element) {
+	// Try to copy the SVG as an image to the clipboard
+	try {
+		if ('write' in navigator.clipboard && navigator.permissions) {
+			const permissionResult = await navigator.permissions.query({ name: 'clipboard-write' });
+			if (permissionResult.state === 'granted') {
+				const svgBlob = svgToBlob(svg);
+				const pngBlob = await rasterizeImageToBlob(imgSrc);
+				const htmlBlob = svgToBlob(svg, 'text/html');
+				const textBlob = svgToBlob(svg, 'text/plain');
+
+console.log('COPY: clipboard.write(ClipboardItem) -- SVG')
+				try {
+					const item = new ClipboardItem({
+						'image/svg+xml': svgBlob,
+						//'image/png': pngBlob,
+						//'text/html': htmlBlob,
+						//'text/plain': textBlob,
+					});
+					await navigator.clipboard.write([item]);
+					return true;
+				} catch (e) {
+					console.error(e.name, e.message);
+				}
+
+console.log('COPY: clipboard.write(ClipboardItem) -- PNG')
+				try {
+					const item = new ClipboardItem({
+						//'image/svg+xml': svgBlob,
+						'image/png': pngBlob,
+						//'text/html': htmlBlob,
+						//'text/plain': textBlob,
+					});
+					await navigator.clipboard.write([item]);
+					return true;
+				} catch (e) {
+					console.error(e.name, e.message);
+				}
+
+				console.log('COPY: clipboard.write(ClipboardItem) -- HTML')
+				try {
+					const item = new ClipboardItem({
+						//'image/svg+xml': svgBlob,
+						//'image/png': pngBlob,
+						'text/html': htmlBlob,
+						'text/plain': textBlob,
+					});
+					await navigator.clipboard.write([item]);
+					return true;
+				} catch (e) {
+					console.error(e.name, e.message);
+				}
+
+			}
+		}
+	} catch (e) {
+		console.error(e.name, e.message);
+	}
+
+	try {
+		// Fallback: this tries to copy the selected range around the image as HTML
+console.log('COPY: execCommand(copy) range')
+		window.getSelection().removeAllRanges();
+		const range = document.createRange();
+		range.selectNode(element);
+		window.getSelection().addRange(range);
+		document.execCommand('copy');
+		window.getSelection().removeAllRanges();
+		return true;
+	} catch (e) {
+		console.error(e.name, e.message);
+	}
+
+	// Fall back to copying source
+	try {
+console.log('COPY: writeText source')
+		await navigator.clipboard.writeText(svg);
+		return true;
+	} catch (e) {
+		console.error(e.name, e.message);
+	}
+
+	return false;
+}
+
+function click_text() {
+	const text = document.querySelector('#output_text').innerText;
+	copyMultiLinePlainTextToClipboard(text);
+	document.querySelector('#text').focus();
+}
+
+async function click_img() {
+	const element = document.querySelector('#output_img img');
+	const svg = decodeURIComponent(element.src.split(',').slice(1).join(''));
+	//const imgSrc = element.src;
+	//copySvgToClipboard(svg, imgSrc, element);
+	downloadBlob(svgToBlob(svg), safeFilename(element.alt) + '.svg');
+}
+
+function click_svg() {
+	const element = document.querySelector('#output_svg svg');
+	const svg = element.outerHTML;
+	//const imgSrc = 'data:image/svg+xml,' + encodeURIComponent(svg);
+	//copySvgToClipboard(svg, imgSrc, element);
+	downloadBlob(svgToBlob(svg), safeFilename(document.querySelector('#text').value) + '.svg');
+}
+
+
+
+function start() {
+    //document.querySelector('#text').addEventListener('input', change);
+    
+    document.querySelector('#output_text').addEventListener('click', click_text());
+    
+    //document.querySelector('#text').focus();
+    
+}
+
+
+window.addEventListener('DOMContentLoaded', start);
+
+
+   </script>
+   <script>
+
+   let name = JSON.parse('<%- JSON.stringify(Name)%>');
+
+   document.getElementById("btn_convert").addEventListener("click", function () {
+	html2canvas(document.getElementById("html-content-holder"), {
+		allowTaint: true,
+		useCORS: true,
+	}).then (function (canvas) {
+		var link = document.createElement("a");
+		document.body.appendChild(link);
+		document.getElementById("previewImg").appendChild(canvas);
+		link.download = "ISEMB/"+ name +".png";
+		link.href = canvas.toDataURL();
+		link.target = "_blank";
+		link.click();
+	});
+ });
+   </script>
+   <script>
+	function reduceimagr(facttextuu,newsize){
+		
+		var parent = facttextuu.parentNode,
+		canvas = document.createElement("canvas"),
+		 ctx = canvas.getContext('2d');
+		 newimage = new Image();
+	
+		 canvas.height = canvas.width = newsize;
+		 ctx.drawImage(facttextuu,0,0,newsize,newsize);
+	
+		 parent.removeChild(facttextuu);
+	
+		 newimage.src = canvas.toDataURL();
+	
+		 parent.appendChild(newimage);
+	}
+		 window.onload = function(){
+			var facttextuu = document.getElementById("facttextuu");
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){reduceimagr(facttextuu,100)}
+	
+		 }
+		
+	
+	 </script> 
+</body>
+</html>
+

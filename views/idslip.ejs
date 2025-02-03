@@ -48,32 +48,29 @@
 
 <body >
 	
+	
 <div style="margin-bottom: -70px;">
             <div class="container" id="html-content-holder" >
 				<v style="display: block;justify-content: center; width:450px;margin-top: 9.7rem;" class="conti">
 					<div style="justify-content: center;text-align: center;">
-				<div style="padding: 35px 10px;background-color: transparent;height: 12rem;;
-				min-width: 10.5rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				border-radius: 10px;justify-self: center;margin-bottom: 2.8rem;margin-left: 125px;margin-top: 2.9rem;"><img style="margin-top: -3.2rem;justify-self: center;height: 13rem;width: 11.3rem;border-radius: 10px;" src="<%=Picturepath%>" >
-				</div>
+						<div style="padding: 35px 10px;background-color: transparent;height: 12rem;;
+						min-width: 10.5rem;background: rgba(255, 255, 255, 0.1);box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+						border-radius: 10px;justify-self: center;margin-bottom: 2.8rem;margin-left: 125px;margin-top: 2.9rem;"><img style="margin-top: -3.2rem;justify-self: center;height: 13rem;width: 11.3rem;border-radius: 10px;" src="<%=Picturepath%>" >
+						</div>
 			</div>
 				<div style="justify-content: center;text-align: center;margin-bottom: -20px;">
 					
-					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 8rem;"><%=Name%> </h1>
-			
-					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 125px;"> <%=Mname%> <%=Surname%></h2>
-				
+					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 8rem;font-family: impact;"><%=Name%> </h1>
+					<div style="display: flex;justify-self: center;">
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 125px;width:10px;overflow:hidden;text-overflow:ellipsis;padding:0px 20px;resize:horizontal"> <%=Mname%> </h2>
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 5px;;">.</h2> 
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 5px;"> <%=Surname%></h2>
+				</div>
 					<h1 style="margin-top:-1px;margin-bottom:0px;line-height:1rem;color: red;font-size: 18px;margin-left: 120px;">>>>STUDENT<<<</h1>
 				</div>
-				<div style="justify-content: center;text-align: center;height: 170px;width: 170px;">
-				  <div  id="facttext" ></div>
-				  <div style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 0rem;" id="output_img">
-					<img src="" alt="">
-				  </div>
-				</div>
-				
+				  <img style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 1.7rem;" id="output_img">	
 			</div>
-<img  id="facttext" />
+
 		</div>
 				<div class="profile-bottom" style="margin-bottom:15px;width: 200px;justify-content: center;justify-self: center;";>
 					    <div class="profile-info hover" class="btn-download " id="btn_convert" style="background-color: rgb(27, 27, 97);color: white;">
@@ -84,175 +81,28 @@
 						</div>                          
 				</div>
 			
-			
-		
-		
-      
-
-	<details style="display: none;" >
-		<summary>Text</summary>
-		<div id="output_text">
-		-
-		</div>
-		</details>
-		
-		<details  style="display: none;" open>
-		<summary>Image &lt;img&gt;</summary>
-		<div style="height: 100px;width: 100px;" id="output_img">
-		  <img src="" alt="">
-		</div>
-		</details>
-		
-		<details style="display: none;">
-		<summary>Image &lt;svg&gt;</summary>
-		<div id="output_svg">
-		  <svg></svg>
-		</div>
-		</details>
-		
 	
 		
 		
    <script type="module">
     import QrCode from '/qrcode.mjs' ;
 
-	let facttext = document.querySelector('#facttext');
-    let numberinput = JSON.parse('<%- JSON.stringify(id)%>');
+	
+    const numberinput = JSON.parse('<%- JSON.stringify(id)%>');
 
-  
-	getfecth() 
-
-    function getfecth() {
-        
-                    const li = document.createElement('li')
-
-                                         li.innerHTML = ``
-										function renderHtml(matrix) {
-	// '▀', '▄', '█' // '\u{0020}' space, '\u{2580}' upper half block, '\u{2584}' lower half block, '\u{2588}' block
-	// Figure space: '\u{2007}'
-	const renderOptions = {
-		segments: ['<span>&nbsp;</span>', '<span>▀</span>', '<span>▄</span>', '<span>█</span>'],
-		sep: '<br>',
-	};
-	return QrCode.render('medium', matrix, renderOptions);
-}
-
-
-
-function change() {
-	const input = 'https://a.mydatabase.com.ng/ISEMB/'+ numberinput;
-	let text;
-	let svg;
-	try {
-		const ecl = 'L+';
+	const ecl = 'L+';
 		const qrOptions = {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
 			optimizeEcc: ecl.includes('+'),
 		};
-		const matrix = QrCode.generate(input, qrOptions);
-		text = renderHtml(matrix);
-	  const renderOptions = {
-		};
-		svg = QrCode.render('svg', matrix, renderOptions);
-	} catch (e) {
-		text = 'Error: ' + e;
-	}
-	const textElement = document.querySelector('#output_text');
-	const imgElement = document.querySelector('#output_img img');
-	const svgElement = document.querySelector('#output_svg svg');
-	textElement.innerHTML = text;
-	imgElement.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-	imgElement.alt = input;
-	svgElement.alt = input;
-	if (svg) {
-		svgElement.outerHTML = svg;
-	} else {
-		svgElement.innerHTML = svg;
-	}
-}
-                                                facttext.appendChild(li)
-												change();
-
-    };
-   
-
-
-function copyMultiLinePlainTextToClipboard(text) {
-	const temp = document.createElement('textarea');
-	temp.value = text;
-	document.body.appendChild(temp);
-	temp.select();
-	document.execCommand('copy');
-	document.body.removeChild(temp);
-}
-
-function safeFilename(text) {
-	return text.replaceAll(/[^a-zA-Z0-9_-]/g, '_').toLowerCase();
-}
-
-
-
-    const originalsize = 300;
-	const targetwidth = 150;
-	const targetheight = 150;
-    const canvas = document.createElement("canvas");
-	const ctx = canvas.getContext('2d');
-	const img = new Image();
-	img.src = text;
-	img.onload = () => {
-			canvas.width = targetwidth;
-			canvas.height = targetheight;
-			ctx.drawImage(img,0,0,targetheight,targetwidth);
-
-			const jpg = canvas.toDataURL("image/jpeg",0.9);
-			const output = document.getElementById("facttextuu");
-
-			output.innerHTML = `${jpg}`;
-			
-		};
-
-
-async function rasterizeImageToBlob(src, type = 'image/png') {
-	const img = new Image();
-	  const ctx = document.createElement('CANVAS').getContext('2d');
-	img.crossOrigin = '';
-	img.src = src;
-	return new Promise(resolve => {
-		img.onload = () => {
-			ctx.canvas.width = '100';
-			ctx.canvas.height = '100';
-			ctx.drawImage(img);
-			ctx.canvas.toBlob((blob) => resolve(blob), type);
-		};
-	});
-img.src = canvas.toDataURL()
-}
-
-function svgToBlob(svg, type = 'image/svg+xml') {
-	return new Blob([svg], { type });
-}
-
-
-function click_text() {
-	const text = document.querySelector('#output_text').innerText;
-	copyMultiLinePlainTextToClipboard(text);
-	document.querySelector('#text').focus();
-}
-
-function start() {
-    //document.querySelector('#text').addEventListener('input', change);
-    
-    document.querySelector('#output_text').addEventListener('click', click_text());
-    
-    //document.querySelector('#text').focus();
-    
-}
-
-
-window.addEventListener('DOMContentLoaded', start);
-
-
+		
+	
+   const matrix = QrCode.generate('https://a.mydatabase.com.ng/ISEMB/'+numberinput,qrOptions);
+   const uri = QrCode.render('bmp-uri', matrix);
+    document.querySelector('#output_img').src = uri;
    </script>
+  
+	</script>
    <script>
 
    let name = JSON.parse('<%- JSON.stringify(Name)%>');
@@ -274,3 +124,4 @@ window.addEventListener('DOMContentLoaded', start);
    </script>
 </body>
 </html>
+

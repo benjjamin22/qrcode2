@@ -1168,9 +1168,9 @@ function renderSvgUri(matrix, options) {
 function renderBmp(matrix, options) {
     options = Object.assign({
         scale: 8,
-        alpha: false,
-        width: '100',
-        height: '100',
+        alpha: true,
+        width: null,
+        height: null,
     }, options);
     const size = matrix.dimension + 2 * matrix.quiet;
     if (options.width === null) options.width = Math.floor(size * options.scale);
