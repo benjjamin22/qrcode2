@@ -60,15 +60,14 @@
 			</div>
 				<div style="justify-content: center;text-align: center;margin-bottom: -20px;">
 					
-					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 8rem;font-family: impact;"><%=Name%> </h1>
-					<div style="display: flex;justify-self: center;">
-					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 125px;width:10px;overflow:hidden;text-overflow:ellipsis;padding:0px 20px;resize:horizontal"> <%=Mname%> </h2>
-					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 5px;;">.</h2> 
-					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 5px;"> <%=Surname%></h2>
+					<h1 style="color:black;text-align:center;margin-bottom:7px;margin-top: -20px; line-height:2rem;font-size: 2rem;font-weight: bolder;margin-left: 8rem;font-family: 'Poppins', sans-serif;"><%=Name%> </h1>
+					<div style="display: flex;justify-self: center;justify-content: center;">
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 120px;"><div id="middle"></div></h2> 
+					<h2 style="color:black;text-align:center;margin-bottom:-0px;line-height:2rem;font-size: 1.4rem;font-weight: bolder;margin-top: -10px;margin-left: 10px;"> <%=Surname%></h2>
+				    </div>
+					<h1 style="margin-top:1px;margin-bottom:0px;line-height:1rem;color: rgb(4, 65, 27);font-size: 22px;margin-left: 120px;font-family: 'Poppins', sans-serif;">>>>STUDENT<<<</h1>
 				</div>
-					<h1 style="margin-top:-1px;margin-bottom:0px;line-height:1rem;color: red;font-size: 18px;margin-left: 120px;">>>>STUDENT<<<</h1>
-				</div>
-				  <img style="height: 140px;width: 140px;margin-left: 12.3rem;margin-top: 1.7rem;" id="output_img">	
+				  <img style="height: 110px;width: 110px;margin-left: 13.3rem;margin-top: 2.6rem;" id="output_img">	
 			</div>
 
 		</div>
@@ -87,9 +86,6 @@
    <script type="module">
     import QrCode from '/qrcode.mjs' ;
 
-	
-    const numberinput = JSON.parse('<%- JSON.stringify(id)%>');
-
 	const ecl = 'L+';
 		const qrOptions = {
 			errorCorrectionLevel: QrCode.ErrorCorrectionLevel[ecl[0]],
@@ -102,6 +98,14 @@
     document.querySelector('#output_img').src = uri;
    </script>
   
+	</script>
+	<script>
+	const middle = document.getElementById('middle');
+    const numberinput = JSON.parse('<%- JSON.stringify(id)%>');
+	const mdname = JSON.parse('<%- JSON.stringify(Mname)%>');
+	const mdnamee = mdname.substring(0, 1)+'.'
+	console.log(mdnamee)
+	middle.innerHTML = mdnamee
 	</script>
    <script>
 

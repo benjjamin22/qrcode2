@@ -12,6 +12,7 @@ body {
   line-height: 1.5;
   color: #333;
   background: #a1c3ff;
+ 
 }
 
 img {
@@ -45,8 +46,6 @@ ul {
  
 }
 
-
-
 .navbar .logodiv p {
   font-size: 20px;
   font-weight: bold;
@@ -58,6 +57,8 @@ ul {
   width: 60px;
   border-radius: 100%;
   margin-right: 10px;
+  margin: -1;
+  animation: flipdiv 2s infinite;
 }
 .navbar .logodiv {
   display: flex;
@@ -75,6 +76,8 @@ padding: 5px;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 .navbar a:hover {
@@ -93,7 +96,7 @@ padding: 5px;
 }
 
 .navbar ul li {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .header {
@@ -257,8 +260,41 @@ max-height: 45rem;
   margin: 18px 15px ;
   transition: transform 0.2s ease-in;
 }
- 
 
+.glass-container {
+  width: 330px;
+  height: 410px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #fff;
+  
+}
+
+.flip {
+  margin: -1;
+  animation: flipdiv 2s infinite;
+}
+
+@keyframes flipdiv {
+  50% {
+      transform: rotateX(180deg);
+  }
+  to {
+      transform: rotateX(360deg);
+  }
+}
+
+@keyframes flipdiv {
+  50% {
+      transform: rotateY(180deg);
+  }
+  to {
+      transform: rotateY(360deg);
+  }
+}
+ 
   @keyframes animate {
     0%,100%{
       background-image: url(photpd..png)
@@ -299,12 +335,15 @@ max-height: 45rem;
     display: block;
     text-align: center;
     text-align: center;
+    
   }
 
   .navbar  {
-  height: 150px; 
+  height: 170px; 
   justify-self: center;
   width: 100%;
+  padding-top: 15px;
+  
   }
 
   .header img {
@@ -327,11 +366,21 @@ max-height: 45rem;
 
 
 .navbar ul li {
-  margin-left: 10px;
+  margin-left: 0px;
+}
+
+.navbar ul  {
+  background-color: #2f6637;
+  width: 80%;
+  justify-self: center;
 }
 
 .nav {
   justify-content: center;
+}
+
+.container {
+  padding: 0 10px;
 }
 
 
