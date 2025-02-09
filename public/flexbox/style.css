@@ -10,9 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
-  background: #a1c3ff;
- 
+  color: #333; 
 }
 
 img {
@@ -100,7 +98,7 @@ padding: 5px;
 }
 
 .header {
-  background-color: #0151cc;
+  background: rgb(4, 71, 4);
   color: #fff;
   min-height: 400px;
   background-image: url("/op.JPG");
@@ -160,6 +158,9 @@ padding: 5px;
   border-radius: 10px;
 }
 
+
+
+
  .boarders {
   width: 200px;
   height: 350px;
@@ -201,8 +202,6 @@ padding: 5px;
   padding: 40px 30px;
 }
 
-
-
 .boxes .container  {
 align-items: center;
 display: flex;
@@ -211,7 +210,9 @@ flex-wrap: wrap;
 overflow-y: hidden;
 max-height: 45rem;
 margin-top: 20px;
+
 }
+
 
 .box {
   background: rgb(4, 71, 4);
@@ -232,10 +233,10 @@ margin-top: 20px;
 .boxes .schools{
  font-size: 30px;
  text-align: center;
- margin-top: -10px;
+ margin-top: 10px;
  margin-bottom: -30px;
- font-weight: bold;
  }
+ 
  .boxes .box h2{
   margin-bottom: -2px;
   font-size: 20px;
@@ -391,9 +392,5 @@ margin-top: 20px;
 .container {
   padding: 0 10px;
 }
-.boxef  {
-  margin-top: 0px;
-  }
-
 
 }

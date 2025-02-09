@@ -43,9 +43,10 @@
         <div>
           <h1>Imo Secondary Education Management Board </h1>
           <h2 style="margin-top: -10px;color: black;">Students identification Slip Portal</h2>
+         
           <p style="margin-top: -10px;">
             Click the button below to DOWNLOAD your id slip
-          </p>
+          </p> 
           <a href="idslip.html"><button>Enter</button></a>
         </div>
         <div class="boarder"></div>
@@ -60,8 +61,7 @@
     </div>
    </div>
    
-    <section class="boxes">
-        
+    <section class="boxes"> 
       <h2 class="schools">Schools Directory</h2>
       <div class="container">
         <div class="box">
@@ -170,6 +170,24 @@
       </div>
   </section>
     
+  <script>
+document.addEventListener("DOMContentLoaded", function(){
+  const fadeElement = document.querySelectorAll(".boarders img");
+
+  function checkvisible(){
+    fadeElement.forEach(element =>{
+      const rect = element.getBoundingClientRect();
+      const windowheight = (window.innerHeight || document.documentElement.clientHeight);
+      if (rect.top <= windowheight){
+        element.classList.add(("visible"));
+      }
+    })
+  }
+  window.addEventListener("scroll", checkvisible);
+  checkvisible()
+})
+
+  </script>
  
   </body>
 </html>

@@ -1167,7 +1167,7 @@ function renderSvgUri(matrix, options) {
 
 function renderBmp(matrix, options) {
     options = Object.assign({
-        scale: 8,
+        scale: 9,
         alpha: true,
         width: null,
         height: null,
