@@ -136,7 +136,7 @@
           ul = document.getElementById("myUL");
           li = ul.getElementsByClassName("box");
           for (i = 0; i < li.length; i++) {
-              a = li[i].getElementsByTagName("h2")[0];
+              a = li[i].getElementsByTagName("h2","p")[0];
               txtValue = a.textContent || a.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
                   li[i].style.display = "";
