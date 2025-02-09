@@ -210,6 +210,7 @@ justify-content: center;
 flex-wrap: wrap;
 overflow-y: hidden;
 max-height: 45rem;
+margin-top: 20px;
 }
 
 .box {
@@ -231,7 +232,8 @@ max-height: 45rem;
 .boxes .schools{
  font-size: 30px;
  text-align: center;
- margin-bottom: -10px;
+ margin-top: -10px;
+ margin-bottom: -30px;
  font-weight: bold;
  }
  .boxes .box h2{
@@ -314,7 +316,8 @@ max-height: 45rem;
 @media (max-width: 768px) {
   .header .container {
     flex-direction: column;
-    padding-top: 20px;
+    
+    padding-top: 40px;
     text-align: center;
   }
 
@@ -354,6 +357,7 @@ max-height: 45rem;
   display: block;
   justify-content: center;  
   justify-self: center;
+  position: relative;
 }
 
 .boarder {
@@ -367,21 +371,29 @@ max-height: 45rem;
 
 .navbar ul li {
   margin-left: 0px;
+  margin-top: 5px;
 }
+
 
 .navbar ul  {
   background-color: #2f6637;
   width: 80%;
   justify-self: center;
+  height: 35px;
 }
 
 .nav {
+  margin-top: 20px;
   justify-content: center;
+  z-index: 10;
 }
 
 .container {
   padding: 0 10px;
 }
+.boxef  {
+  margin-top: 0px;
+  }
 
 
 }

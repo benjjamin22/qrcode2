@@ -116,7 +116,7 @@ async function getmovie() {
                 <div class="profile-bottom">
                 <h1 style="font-size:12px;margin-bottom:0px;text-align:center;padding:0 1rem;margin-top:-10px;">SCHOOL</h1>
                     <div style="flex-direction:column;margin-bottom:15px;text-align:center;" class="profile-info"> 
-                        <h1>- ${user.School} -</h1>
+                        <h1>- ${user.School} ${user.sn} -</h1>
                     </div>
                 
                 <h1 style="font-size:12px;margin-bottom:15px;text-align:center;padding:0 1rem;">DATE OF BIRTH</h1>
