@@ -50,7 +50,7 @@
               <div class="container">
                 <div class="box">
                   <div style="display: flex;margin: 2px 0px;align-items: center;">
-                    <img src="./inst.PNG" style="width: 18px;height: 18px;"><p style="margin-left: 10px;font-size: 17px;">Akwakuma Girls Sec. School</p>
+                    <img src="./inst.PNG" style="width: 18px;height: 18px;"><h2 style="margin-left: 10px;font-size: 17px;">Akwakuma Girls Sec. School</h2>
                   </div>
                   <div style="display: flex;margin: 2px 0px;align-items: center;">
                     <img src="./loc.PNG" style="width: 18px;height: 18px;"><p style="margin-left: 10px;font-size: 14px;">Phort Harcourt Rd, Owerri</p>
@@ -63,7 +63,7 @@
         
                 <div class="box">
                   <div style="display: flex;margin: 2px 0px;align-items: center;">
-                    <img src="./inst.PNG" style="width: 18px;height: 18px;"><p style="margin-left: 10px;font-size: 17px;">Holy Ghost Sec. School</p>
+                    <img src="./inst.PNG" style="width: 18px;height: 18px;"><h2 style="margin-left: 10px;font-size: 17px;">Holy Ghost Sec. School</h2>
                   </div>
                   <div style="display: flex;margin: 2px 0px;align-items: center;">
                     <img src="./loc.PNG" style="width: 18px;height: 18px;"><p style="margin-left: 10px;font-size: 14px;">Assumpta Rd, Owerri</p>
@@ -136,7 +136,7 @@
           ul = document.getElementById("myUL");
           li = ul.getElementsByClassName("box");
           for (i = 0; i < li.length; i++) {
-              a = li[i].getElementsByTagName("p")[0];
+              a = li[i].getElementsByTagName("h2")[0];
               txtValue = a.textContent || a.innerText;
               if (txtValue.toUpperCase().indexOf(filter) > -1) {
                   li[i].style.display = "";
