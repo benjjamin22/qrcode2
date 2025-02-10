@@ -103,6 +103,29 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get('/:id', async (req, res) => {
+    try{
+        const id = req.params.id;
+        const foundUser = accounts.find((data) => id === data.id );
+        if (foundUser ) {
+            req.session.user = foundUser.pine;
+                res.render('result',{Name:foundUser.Aname.Name,Mname:foundUser.Aname.Mname,Surname:foundUser.Aname.Surname,
+                    NIN:foundUser.NIN,Gender:foundUser.Gender,Day:foundUser.Ddateofbirth.Day,Month:foundUser.Ddateofbirth.Month,
+                    Year:foundUser.Ddateofbirth.Year,Presentclass:foundUser.Presentclass,Bloodgroup:foundUser.Bloodgroup,
+                    State:foundUser.State,School:foundUser.School,HometownCommunity:foundUser.HometownCommunity,
+                    ParentPhoneNo:foundUser.ParentPhoneNo,ParentPhoneNo2:foundUser.ParentPhoneNo2,Picturepath:foundUser.client,
+                    Status:foundUser.Status,id:foundUser.id,Status:foundUser.Status,time:foundUser.time});
+            } else {
+                res.render('ddx');
+            }
+       
+    } catch{
+        res.send("Internal server error");
+        
+    }
+});
+
+
 app.use((req,res,next)=>{
     if(req.body && typeof req.body === 'object'){
         for(const key in req.body){
