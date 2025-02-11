@@ -61,7 +61,7 @@ app.use(session({
 // setup static folder
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/flexbox')));
 
 // Body parser middleware
 app.use(express.json());
