@@ -93,7 +93,7 @@
 		};
 		
 	
-   const matrix = QrCode.generate('https://a.mydatabase.com.ng/ISEMB/'+numberinput,qrOptions);
+   const matrix = QrCode.generate('https://isemb.mydatabase.com.ng/'+numberinput,qrOptions);
    const uri = QrCode.render('bmp-uri', matrix);
     document.querySelector('#output_img').src = uri;
    </script>

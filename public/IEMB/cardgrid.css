@@ -39,12 +39,11 @@ body {
     display: flex;
   }
 
-.profile-top img {
-    justify-self: center;
+  .profile-top img {
     border-radius: 5%;
     border: 0px solid white;
-    height: 18rem;
-    width: 15rem;
+    height: 20em;
+    width: 17rem;
     object-fit: cover;
     margin-top: 0px;
 }
