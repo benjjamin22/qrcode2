@@ -40,7 +40,7 @@ const keepAlive = () => {
 //Schedule the task to run every 5 minutes
 cron.schedule('*/14 * * * *', () => {
     console.log('Sending keep-alive request to server...');
-    keepAlive();
+    keepAlive;
 });
 
 const app = express();
